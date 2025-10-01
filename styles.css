@@ -19,4 +19,335 @@
     font-family: 'mina';
     src: url('font/mina/Mina-Regular.ttf') format('truetype');
   }
+
+  /*basics------------------------------------*/
+  body {
+    background-color: var(--hintergrund);
+    color: var(--dunkelblau);
+    display: flex;
+    width: 100%;
+  }
+  .h1 {
+    font-size: 65px;
+    font-family: 'mighty-souly';
+    display: flex;
+    justify-content: center;
+  }
+  .h2 {
+  font-size: 35px;
+  font-family: 'mighty-souly' ;
+
+  }
+  .h3 {
+    font-size: 25px;
+    font-family: 'mighty-souly' ;
+  }
+
+
+/*Struktur und Layout-------------------------
+  .inhalte {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:space-evenly ;
+    width: 100vw;
+    box-sizing: border-box;
+  }
+  .hauptbox {
+    width: 400px;
+    height: 400px;
+    padding: 10px;
+    border-radius: 80px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center ;
+    justify-content: center;
+    text-align: center;
+  }
+  #wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+/*Temperaturanzeige 1.0 / Thermometer---------
+  .temperaturanzeige {
+    font-size: 80px;
+    font-family: 'Mitr-SemiBold';
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-left:-15%;
+    margin-right:-15%;
+  }
+  #termometer {
+    width: 34px;
+    height: 300px;
+    position: relative;
+    background-color: white; 
+    box-sizing: content-box; 
+    border: 10px solid var(--dunkelblau);
+    border-radius: 24px;
+    z-index: 1;
+    margin-bottom: 60px;
+  }
+
+/*Temperaturanzeige 2.0-----------------------
+    .output-box {
+      padding: 15px;
+      border-radius: 10px;
+      max-width: 300px;
+      min-width: 280px;
+      color: #003366;
+    }
+
+/*Datumanzeige--------------------------------
+    #dateAndtime {
+      color: var(--dunkelblau);
+      font-family: 'Mitr-Regular';
+      font-size: 15px;
+      margin-top: 15px;
+    }
+
+/*Untere Kugel vom Thermometer----------------
+#termometer:after {
+  content: "";
+  position: absolute;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 60px;
+  background-color: var(--mittelblau);
+  bottom: -48px;
+  border: 10px solid var(--dunkelblau);
+  z-index: -3;
+  left: 50%;
+  border-radius: 50%;
+}
+
+/*Gradstriche (Graduierungen) im Thermometer--
+#graduations {
+  height: 59%;
+  top: 20%;
+  width: 50%;
+  position: absolute;
+  border-top: 2px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+#graduations:before {
+  content: "";
+  position: absolute;
+  height: 34%;
+  width: 100%;
+  top: 32%;
+  border-top: 2px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.5);
+}
+
+/*Farbe/Füllung im Thermometers---------------
+#temperature {
+  bottom: 0;
+  background: linear-gradient(#f17a65, var(--mittelblau)) no-repeat bottom;
+  width: 100%;
+  border-radius: 20px;
+  background-size: 100% 210px;
+  transition: all 0.2s ease-in-out;
+  position: absolute;
+}
+
+/*Temperaturwertanzeige-----------------------
+#temperature:before {
+  content: attr(data-value);
+  color: white;
+  z-index: 2;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1em;
+  line-height: 1;
+  transform: translateY(50%);
+  left: calc(100% + 1em / 1.5);
+  top: calc(-1em + 5px - 10px);
+  position: absolute;
+}
+
+/*Buttons und Icons---------------------------
+  .button-container {
+  display: flex;
+  gap: 30px;
+  justify-content: space-evenly;
+  }
+  .button_city_img {
+    height: 40px;
+  }
+  .bern-button, .thun-button {
+    font-size: 20px;
+    font-family: 'Mitr-Semibold';
+    border: none;
+    border-radius: 5px;
+    color: var(--mittelblau);
+    background-color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .icon-container-wasser, .icon-container-luft {
+    display: flex;
+    align-items: center;
+    height: 100px;
+    }
+  .icon-container-luft {
+    margin-right: 1px;
+  }
+  .icon-container-wasser {
+    margin-left: 1px;
+  }
   
+/*Wellen im Hintergrund-----------------------
+.hintergrund_wellen {
+  background-image: url('images/wellen_ohneHintergrund.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-position: bottom;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  z-index: -1;
+}
+
+/*Responsive Tablet: bis 1024px---------------
+@media (max-width: 1024px) {
+
+  .titel {
+    font-size: 55px;
+  }
+  .inhalte {
+    flex-direction: column;
+    align-items: center;
+  }
+  .hauptbox {
+    width: 350px;
+    height: 350px;
+    padding: 30px;
+  }
+  .button-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+  .icon-container-luft {
+    margin-right: 6px;
+  }
+  .icon-container-wasser {
+    margin-left: 6px;
+  }
+  #button-container-icons {
+    margin-bottom: 15px;
+  }
+  .temperaturanzeige {
+    font-size: 65px;
+  }
+  #dateAndtime {
+    font-size: 18px;
+  }
+  #airTempImg,
+  #waterTempImg {
+    width: 80px;
+    height: 80px;
+  }
+  #wrapper {
+    width: 80px;
+    height: 250px;
+  }
+  #termometer {
+    width: 28px;
+    height: 240px;
+    border: 8px solid var(--dunkelblau);
+    border-radius: 20px;
+    margin-bottom: 50px;
+  }
+  #termometer:after {
+    width: 50px;
+    height: 50px;
+    bottom: -40px;
+    border: 8px solid var(--dunkelblau);
+  }
+  #temperature {
+    border-radius: 18px;
+    background-size: 100% 170px;
+  }
+  .hintergrund_wellen {
+    height: 25%;
+  }
+}
+
+/*Responsive Mobile: bis 768px----------------
+@media (max-width: 768px) {
+  .inhalte {
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 10px;
+  }
+  .titel {
+    font-size: 35px;
+  }
+  .h2_aarehöt {
+    font-size: 30px;
+  }
+  .h3_in {
+    font-size: 25px;
+  }
+  .hauptbox {
+    width: 330px;
+    height: 330px;
+    padding: 10px;
+  }
+  .button-container {
+    flex-direction: row;
+    align-items: center;
+    column-gap: 15px;
+    justify-content: space-evenly;
+  }
+  .icon-container-luft {
+    margin-right: 8px;
+  }
+  .icon-container-wasser {
+    margin-left: 8px;
+  }
+  .temperaturanzeige {
+    font-size: 55px;
+  }
+  #dateAndtime {
+    font-size: 16px;
+  }
+  #airTempImg, #waterTempImg {
+    width: 80px;
+    height: 80px;
+  }
+  #wrapper {
+    width: 60px;
+    height: 200px;
+  }
+  #termometer {
+    width: 22px;
+    height: 200px;
+    border: 6px solid var(--dunkelblau);
+    border-radius: 16px;
+    margin-bottom: 40px;
+  }
+  #termometer:after {
+    width: 42px;
+    height: 42px;
+    bottom: -34px;
+    border: 6px solid var(--dunkelblau);
+  }
+  #temperature {
+    border-radius: 14px;
+    background-size: 100% 140px;
+  }
+  #temperature:before {
+    font-size: 0.9em;
+  }
+} */
