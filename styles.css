@@ -1,4 +1,4 @@
-/Grundfarben---------------------------------/
+/*Grundfarben*/
 :root {
     --hintergrund: rgba(179, 228, 255, 1);
     --dunkelblau: rgba(0, 34, 99, 1);
@@ -6,16 +6,17 @@
     --anfängerblau: rgba(78, 152, 209, 0.4);
   }
 
-/Font/Schrift--------------------------------/
+/*Font/Schrift*/
 @font-face {
   font-family: 'mighty-souly';
-  src: url()
+  src: url('font/mighty-souly/mighty-souly.otf') format('truetype');
   }
   @font-face {
-    font-family: 'Mitr-SemiBold';
-    src: url('Font/Mitr-SemiBold.ttf') format('truetype');
+    font-family: 'mina';
+    src: url('font/mina/Mina-Bold.ttf') format('truetype');
   }
-  @font-face {
-    font-family: 'Mitr-Regular';
-    src: url('font/Mitr-Regular.ttf') format('truetype');
-  }
+   @font-face {
+    font-family: 'mina';
+    src: url('font/mina/Mina-Regular.ttf') format('truetype');
+  }
+  
