@@ -32,12 +32,15 @@
     font-family: 'mighty-souly';
     display: flex;
     justify-content: center;
+    align-content: center;
   }
   .h2 {
   font-size: 35px;
-  font-family: 'mighty-souly' ;
-
+  font-family: 'mighty-souly';
+  justify-content: center;
+  align-content: center;
   }
+
   .h3 {
     font-size: 25px;
     font-family: 'mighty-souly' ;
