@@ -27,19 +27,29 @@
     display: flex;
     width: 100%;
   }
-  .h1 {
-    font-size: 65px;
+  body {
+    display: flex;
+    justify-content: center;  /* horizontal zentrieren */
+    align-items: center;      /* vertikal zentrieren */
+  }
+  .title h1 {
+    font-family: 'mighty-souly'; /* Beispiel-Schrift für Wellenradar */
+    font-size: 65px;                        
+    margin: 0;
+    text-align: center;
     font-family: 'mighty-souly';
     display: flex;
+  }
+  
+  .title h2 {
+    font-family: 'mina-regular';          /* andere Schrift für California */
+    font-size: 35px;                      
+    font-weight: normal;                    /* dezenter */
+    margin: 0.5rem 0 0 0;                  /* kleiner Abstand nach oben */
     justify-content: center;
     align-content: center;
   }
-  .h2 {
-  font-size: 35px;
-  font-family: 'mighty-souly';
-  justify-content: center;
-  align-content: center;
-  }
+
 
   .h3 {
     font-size: 25px;
