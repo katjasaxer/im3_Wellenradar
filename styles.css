@@ -1,0 +1,21 @@
+/Grundfarben---------------------------------/
+:root {
+    --hintergrund: rgba(179, 228, 255, 1);
+    --dunkelblau: rgba(0, 34, 99, 1);
+    --mittelblau: rgba(87, 153, 209, 1);
+    --anfängerblau: rgba(78, 152, 209, 0.4);
+  }
+
+/Font/Schrift--------------------------------/
+@font-face {
+  font-family: 'mighty-souly';
+  src: url()
+  }
+  @font-face {
+    font-family: 'Mitr-SemiBold';
+    src: url('Font/Mitr-SemiBold.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'Mitr-Regular';
+    src: url('font/Mitr-Regular.ttf') format('truetype');
+  }
