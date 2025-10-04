@@ -41,25 +41,22 @@
     font-family: 'mighty-souly'; /* Beispiel-Schrift für Wellenradar */
     font-size: 40px;                        
     text-align: center;
-    margin-top: 2%;
-    margin-bottom: 0px;
-
   }
   
   .h2_california {
-    font-family: 'mina-bold';          /* andere Schrift für California */
-    font-size: 25px;                      
+    font-family: 'mina-regular';          /* andere Schrift für California */
+    font-size: 20px;                      
     font-weight: normal;                   
     text-align: center;
-    margin-top: 1%;
-    margin-bottom: 0px;
   }
 
-
-  .h3 {
-    font-size: 25px;
-    font-family: 'mighty-souly' ;
+  .inhalt {
+  display: flex;
   }
+
+  .map {
+size: 5px;
+}
 
 /*Struktur und Layout-------------------------*/
 
