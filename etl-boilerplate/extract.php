@@ -32,11 +32,11 @@ function fetchBuoyData()
     print_r($response);
 
     // Dekodiert die JSON-Antwort und gibt Daten zurück
-    //return json_decode($response, true);
+    return json_decode($response, true);
 }
 
 // Gibt die Daten zurück, wenn dieses Skript eingebunden ist
-return fetchBuoyData();
+    return fetchBuoyData();
 
 
 

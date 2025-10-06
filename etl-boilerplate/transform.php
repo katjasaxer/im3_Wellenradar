@@ -20,9 +20,11 @@ $data = include('extract.php');
 
 // Definiert eine Zuordnung von Koordinaten zu Stadtnamen
 $locationsMap = [
-    '46.94,7.44' => 'Bern',
-    '46.84,9.52' => 'Chur',
-    '47.36,8.559999' => 'Zürich',
+    '46014' => 'Albion',
+    '46237' => 'San Francisco Bar',
+    '46215' => 'Diablo Canyon',
+    '46268' => 'Topanga',
+    '46235' => 'Imperial Beach',
 ];
 
 // Funktion, um Fahrenheit in Celsius umzurechnen
