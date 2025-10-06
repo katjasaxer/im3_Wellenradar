@@ -27,19 +27,30 @@ $locationsMap = [
     '46235' => 'Imperial Beach',
 ];
 
-// Funktion, um Fahrenheit in Celsius umzurechnen
+// Funktion, um Imperial in Metric umzurechnen
+function convertToMetric($imperial) {
+    return round($imperial *0.3048, 2); //rundet auf 2 Nachkommastellen
+}
 
-// Neue Funktion zur Bestimmung der Wetterbedingung
+// Neue Funktion zur Bestimmung der Bojendaten
+function determineCondition($swht, $swd, $wwh, $wwd) {
 
-
+    if ($swht < 2) {
+        return 'beginner';
+    } elseif ($swht > 2) {
+        return 'advanced';
+}
+}
 
 // Initialisiert ein Array, um die transformierten Daten zu speichern
 $transformedData = [];
 
+
 // Transformiert und fügt die notwendigen Informationen hinzu
 foreach ($data as $location) {
     // Bestimmt den Stadtnamen anhand von Breitengrad und Längengrad
-
+    $cityKey = $location['latitude'] . ',' . $location['longitude'];
+    $city = $locationsMap[$cityKey] ?? 'Unbekannt';
     // Wandelt die Temperatur in Celsius um und rundet sie
 
     // Bestimmt die Wetterbedingung
@@ -50,3 +61,4 @@ foreach ($data as $location) {
 // Kodiert die transformierten Daten in JSON
 
 // Gibt die JSON-Daten zurück, anstatt sie auszugeben
+
