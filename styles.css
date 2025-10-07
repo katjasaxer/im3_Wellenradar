@@ -52,13 +52,16 @@
   .h2_california {
     font-family: 'mina-regular';          /* andere Schrift für California */
     font-size: 20px;                      
-    margin-top: -50px;
+    margin-top: -55px;
     color: var(--dunkelblau);
   }
 
   .inhalt {
     width: 100%;
     margin-top: auto;          /* schiebt den Block nach unten */
+    position: relative;
+    display: inline-block;
+
   }
   
   .map {
@@ -69,10 +72,15 @@
     width: 50%;         /* Größe des Bildes */
     max-width: 600px;
     height: auto;
-    margin-left: 55%;    /* Abstand vom rechten Rand */
+    margin-left: 58%;    /* Abstand vom rechten Rand */
     margin-top: -60px;
   }
   
+  .wellen-icon {
+    position: absolute;
+    width: 30px; /* Größe der Icons */
+    height: 30px;
+  }
 }
 
   @media (max-width: 1024px) { /*wenn grösser als mobile-Layout, dann wechselt es auf Desktop (tablet-layout wird übersprungen)*/
@@ -196,4 +204,4 @@
   #temperature:before {
     font-size: 0.9em;
   }
-} */
+} */ 
