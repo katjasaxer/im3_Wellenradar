@@ -58,7 +58,6 @@
 
   .inhalt {
     width: 100%;
-    margin-top: auto;          /* schiebt den Block nach unten */
     position: relative;
     display: inline-block;
 
@@ -69,7 +68,7 @@
   }
 
   .map img {
-    width: 50%;         /* Größe des Bildes */
+    width: 100%;         /* Größe des Bildes */
     max-width: 600px;
     height: auto;
     margin-left: 58%;    /* Abstand vom rechten Rand */
@@ -80,12 +79,30 @@
     position: absolute;
     width: 30px; /* Größe der Icons */
     height: 30px;
+    margin-top: -30%;
+
   }
-  .img.welle_1 {
+  .welle_1 {
    width: 30px; /* Größe der Icons */
-   height: 30px;
-   max-width: 30px;
+   height: 50px;
+   max-width: 100px;
+   margin-left: 950px;
+   margin-top: -20%;
   }
+  .welle_4 {
+    width: 30px; /* Größe der Icons */
+    height: 50px;
+    max-width: 100px;
+    margin-left: 950px;
+    margin-top: -500px;
+   }
+   .welle_5 {
+    width: 30px; /* Größe der Icons */
+    height: 50px;
+    max-width: 100px;
+    margin-left: 950px;
+    margin-top: -700px;
+   }
 }
 
   @media (max-width: 1024px) { /*wenn grösser als mobile-Layout, dann wechselt es auf Desktop (tablet-layout wird übersprungen)*/
@@ -130,7 +147,7 @@
     }
   
   .map img {
-      width: 100%;
+      width: 420px;
       margin-top: 40%;
       max-width: 420px;
   }
