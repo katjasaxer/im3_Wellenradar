@@ -51,7 +51,7 @@
   .h2_california {
     font-family: 'mina-regular';          /* andere Schrift für California */
     font-size: 20px;                      
-    margin: 0px;
+    margin-top: -20px;
     color: var(--dunkelblau);
   }
 
