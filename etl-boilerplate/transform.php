@@ -37,9 +37,9 @@ function determineCondition($swht, $swd, $wwh, $wwd) {
 
     if ($swht < 2) {
         return 'beginner';
-    } elseif ($swht > 2) {
+    } else ($swht > 2) {
         return 'advanced';
-}
+    }
 }
 
 // Initialisiert ein Array, um die transformierten Daten zu speichern
@@ -51,14 +51,37 @@ foreach ($data as $location) {
     // Bestimmt den Stadtnamen anhand von Breitengrad und Längengrad
     $cityKey = $location['latitude'] . ',' . $location['longitude'];
     $city = $locationsMap[$cityKey] ?? 'Unbekannt';
+
     // Wandelt die Temperatur in Celsius um und rundet sie
+    $temperatureCelsius = convertToCelsius($location['current']['temperature_2m']);
 
     // Bestimmt die Wetterbedingung
+    $condition = determineCondition(
+        $location['current']['cloud_cover'],
+        $location['current']['rain'],
+        $location['current']['showers'],
+        $location['current']['snowfall']
+    );
 
     // Konstruiert die neue Struktur mit allen angegebenen Feldern, einschließlich des neuen 'condition'-Feldes
+    $transformedData[] = [
+        'location' => $city,
+        'temperature_celsius' => $temperatureCelsius,
+        'rain' => $location['current']['rain'],
+        'showers' => $location['current']['showers'],
+        'snowfall' => $location['current']['snowfall'],
+        'cloud_cover' => $location['current']['cloud_cover'],
+        'condition' => $condition // Fügt das Feld 'condition' hinzu
+    ];
 }
 
 // Kodiert die transformierten Daten in JSON
+$jsonData = json_encode($transformedData, JSON_PRETTY_PRINT);
 
-// Gibt die JSON-Daten zurück, anstatt sie auszugeben
+// Optional kann das JSON ausgegeben werden, um die Ausgabe zu sehen
+echo $jsonData;
 
+// Wenn dies in eine Datei gespeichert werden soll, kommentieren Sie die folgende Zeile aus
+// file_put_contents('transformed_weather_data.json', $jsonData);
+
+?>
