@@ -81,6 +81,11 @@
     width: 30px; /* Größe der Icons */
     height: 30px;
   }
+  .img.welle_1 {
+   width: 30px; /* Größe der Icons */
+   height: 30px;
+   max-width: 30px;
+  }
 }
 
   @media (max-width: 1024px) { /*wenn grösser als mobile-Layout, dann wechselt es auf Desktop (tablet-layout wird übersprungen)*/
