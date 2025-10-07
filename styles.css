@@ -58,16 +58,19 @@
 
   .inhalt {
     width: 100%;
-    justify-content: flex-end; /* Bild nach rechts ausrichten */
     margin-top: auto;          /* schiebt den Block nach unten */
   }
   
+  .map {
+    justify-content: flex-end; /* Bild nach rechts ausrichten */
+  }
+
   .map img {
     width: 50%;         /* Größe des Bildes */
-    height: auto;
     max-width: 600px;
-    display: block;
-    margin-right: -200px;    /* Abstand vom rechten Rand */
+    height: auto;
+    margin-left: 55%;    /* Abstand vom rechten Rand */
+    margin-top: -60px;
   }
   
 }
@@ -94,18 +97,18 @@
     
     .h1_wellenradar {
       font-family: 'mighty-souly'; /* Beispiel-Schrift für Wellenradar */
-      font-size: 20px;                        
+      font-size: 30px;                        
       margin: 0px;
       color: var(--dunkelblau);
-      margin-top: -20px;
+      margin-top: -30px;
     }
     
     .h2_california {
       font-family: 'mina-regular';  /* andere Schrift für California */
-      font-size: 10px;                      
+      font-size: 20px;                      
       margin: 0px;
       color: var(--dunkelblau);
-      margin-top: -40px;
+      margin-top: -50px;
     }
   
     .inhalt {
@@ -114,12 +117,10 @@
     }
   
   .map img {
-      margin-top: -55px;
-      margin-right: 3%;
-      max-width: 250px;   /* Smartphonegröße */
-      margin-right: 5%;
-      
-      }
+      width: 100%;
+      margin-top: 40%;
+      max-width: 420px;
+  }
   }
   
     
