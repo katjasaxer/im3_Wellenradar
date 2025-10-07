@@ -25,6 +25,7 @@
     background-color: var(--hintergrund);
     color: var(--dunkelblau);
     display: flex;
+    
     width: 100%;
   }
   body {
