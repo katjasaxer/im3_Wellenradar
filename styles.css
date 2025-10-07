@@ -55,7 +55,8 @@
   }
 
   .map {
-size: 5px;
+width: 5px;
+height: 5px;
 }
 
 /*Struktur und Layout-------------------------*/
