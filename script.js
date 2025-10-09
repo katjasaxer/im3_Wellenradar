@@ -13,15 +13,17 @@
    ============================================================================ */
 
 document.addEventListener("DOMContentLoaded", () => {
-  const apiUrl = "https://im3.im-abc.ch/etl-boilerplate/unload.php"; // Passen Sie die URL bei Bedarf an
+  const apiUrl = "https://im3.aare-jetzt.ch/unload.php"; // Passen Sie die URL bei Bedarf an
 
   fetch(apiUrl)
     .then((response) => response.json())
     .then((data) => {
-      const ctx = document.getElementById("temperatureChart").getContext("2d");
-      const datasets = Object.keys(data).map((city) => ({
+  console.log("Abgerufene Daten:", data);
+
+      const ctx = document.getElementById("wellenChart").getContext("2d");
+      const datasets = Object.keys(data).map((boje) => ({
         label: city,
-        data: data[city].map((item) => item.temperature_celsius),
+        data: data[boje].map((item) => item.wellen_höhe),
         fill: false,
         borderColor: getRandomColor(), // Generiert eine zufällige Farbe für jede Stadtlinie im Diagramm
         tension: 0.1, // Gibt der Linie im Diagramm eine leichte Kurve
