@@ -58,66 +58,66 @@
 
   .inhalt {
     width: 100%;
-    position: relative;
-    display: inline-block;
-
+    display: flex;
+    justify-content: right;
+    margin-top: -40px;
   }
   
   .map {
-    justify-content: flex-end; /* Bild nach rechts ausrichten */
-  }
-
-  .map img {
-    width: 100%;         /* Größe des Bildes */
+    position: relative; /* macht das Bild zum Bezugspunkt für absolute Positionierung */
+    width: 100%;
     max-width: 600px;
-    height: auto;
-    margin-left: 58%;    /* Abstand vom rechten Rand */
-    margin-top: -60px;
   }
   
-  .wellen-icon {
-    position: absolute;
-    width: 30px; /* Größe der Icons */
-    height: 30px;
-    margin-top: -30%;
-
+  .map img.background-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    position: relative;
+    z-index: 1; /* Bild bleibt unten */
   }
-  .welle_1 {
-   width: 30px; /* Größe der Icons */
-   height: 50px;
-   max-width: 100px;
-   margin-left: 950px;
-   margin-top: -20%;
+  
+  /* Icons */
+  .welle {
+    position: absolute;
+    width: 8%; /* skalierbar mit dem Bild */
+    transform: translate(-50%, -50%);
+    z-index: 2; /* Icons über dem Bild */
+    cursor: pointer;
+  }
+
+  /* Positionen relativ zum Bild (anpassen nach Bedarf) */
+  .welle_1 { 
+    top: 5%;
+    left: 30%; 
+    width: 50px;
+    height: 50px;
   }
   .welle_2 {
-    width: 30px; /* Größe der Icons */
+    top: 5%;
+    left: 30%; 
+    width: 50px;
+    height: 50px; }
+  .welle_3 { 
+    top: 5%;
+    left: 30%; 
+    width: 50px;
     height: 50px;
-    max-width: 100px;
-    margin-left: 950px;
-    margin-top: -20%;
-   }
-   .welle_3 {
-    width: 30px; /* Größe der Icons */
+  }
+  .welle_4 { 
+    top: 5%;
+    left: 30%; 
+    width: 50px;
     height: 50px;
-    max-width: 100px;
-    margin-left: 950px;
-    margin-top: -20%;
-   }
-  .welle_4 {
-    width: 30px; /* Größe der Icons */
+  }
+  .welle_5 { 
+    top: 5%;
+    left: 30%; 
+    width: 50px;
     height: 50px;
-    max-width: 100px;
-    margin-left: 950px;
-    margin-top: -500px;
-   }
-   .welle_5 {
-    width: 30px; /* Größe der Icons */
-    height: 50px;
-    max-width: 100px;
-    margin-left: 950px;
-    margin-top: -700px;
-   }
-}
+  }
+
+
 
   @media (max-width: 1024px) { /*wenn grösser als mobile-Layout, dann wechselt es auf Desktop (tablet-layout wird übersprungen)*/
     body {
