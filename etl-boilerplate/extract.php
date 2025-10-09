@@ -14,9 +14,9 @@
   10) Fehlerfälle: Exception/Fehlerobjekt nach oben reichen (kein HTML ausgeben).
    ============================================================================ */
 
-function fetchBuoyData()
+function fetchBuoyData($bId)
 {
-    $url = "https://surftruths.com/api/buoys/46215/readings.json";
+    $url = "https://surftruths.com/api/buoys/$bId/readings.json";
 
     // Initialisiert eine cURL-Sitzung
     $ch = curl_init($url);  //$ch ist variablenname von wolfgang & nick
@@ -29,14 +29,32 @@ function fetchBuoyData()
 
     // Schließt die cURL-Sitzung
     curl_close($ch);
-    print_r($response);
+    //print_r($response);
 
     // Dekodiert die JSON-Antwort und gibt Daten zurück
     return json_decode($response, true);
 }
 
-// Gibt die Daten zurück, wenn dieses Skript eingebunden ist
-    return fetchBuoyData();
+$locationsMap = [
+    '46014' => 'Albion',
+    '46237' => 'San Francisco Bar',
+    '46215' => 'Diablo Canyon',
+    '46268' => 'Topanga',
+    '46235' => 'Imperial Beach',
+];
+
+$bdata = [];
+
+forEach($locationsMap as $bId => $bName){
+    $einzelneboje = fetchBuoyData($bId)[0];
+    $einzelneboje["id"] = $bId;
+    $einzelneboje["name"] = $bName;
+   
+    $bdata[] = $einzelneboje;
+
+} 
+// Gibt die Daten zurück,
+return $bdata;
 
 ?>
 
