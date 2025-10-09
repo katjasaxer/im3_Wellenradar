@@ -18,70 +18,84 @@
 // Bindet das Skript extract.php für Rohdaten ein und speichere es in $data
 $data = include('extract.php');
 
-// Definiert eine Zuordnung von Koordinaten zu Stadtnamen
+// Definiert eine Zuordnung von Bojen-ID zu Standortnamen
 $locationsMap = [
-    '46014' => 'Albion',
-    '46237' => 'San Francisco Bar',
-    '46215' => 'Diablo Canyon',
-    '46268' => 'Topanga',
-    '46235' => 'Imperial Beach',
+    '46237' => 'Albion',
+    '46236' => 'San Francisco Bar',
+    '46223' => 'Diablo Canyon',
+    '46221' => 'Topanga',
+    '46225' => 'Imperial Beach',
 ];
 
-// Funktion, um Imperial in Metric umzurechnen
-function convertToMetric($imperial) {
-    return round($imperial *0.3048, 2); //rundet auf 2 Nachkommastellen
+// Funktion, um Feet in Meter umzuwandeln (falls nötig)
+function convertFeetToMeter($feet) {
+    return round($feet * 0.3048, 2);
 }
 
-// Neue Funktion zur Bestimmung der Bojendaten
-function determineCondition($swht, $swd, $wwh, $wwd) {
-
-    if ($swht < 2) {
-        return 'beginner';
-    } else ($swht > 2) {
-        return 'advanced';
+// Funktion zur Bestimmung der Surf-Bedingung
+function determineCondition($swht) {
+    if ($swht > 2) {
+        return 'Advanced';
+    } else {
+        return 'Beginner';
     }
 }
 
 // Initialisiert ein Array, um die transformierten Daten zu speichern
 $transformedData = [];
 
-
 // Transformiert und fügt die notwendigen Informationen hinzu
-foreach ($data as $location) {
-    // Bestimmt den Stadtnamen anhand von Breitengrad und Längengrad
-    $cityKey = $location['latitude'] . ',' . $location['longitude'];
-    $city = $locationsMap[$cityKey] ?? 'Unbekannt';
+foreach ($data as $entry) {
 
-    // Wandelt die Temperatur in Celsius um und rundet sie
-    $temperatureCelsius = convertToCelsius($location['current']['temperature_2m']);
+    // Buoy-ID aus URL extrahieren
+    if (preg_match('/(\d{5})\.json$/', $entry['buoy_url'], $matches)) {
+        $bojen_id = $matches[1];
+    } else {
+        throw new Exception("Bojen-ID konnte nicht aus URL extrahiert werden.");
+    }
 
-    // Bestimmt die Wetterbedingung
-    $condition = determineCondition(
-        $location['current']['cloud_cover'],
-        $location['current']['rain'],
-        $location['current']['showers'],
-        $location['current']['snowfall']
-    );
+    // Standortname aus Mapping
+    $name = $locationsMap[$bojen_id] ?? 'Unbekannt';
 
-    // Konstruiert die neue Struktur mit allen angegebenen Feldern, einschließlich des neuen 'condition'-Feldes
+    // Umrechnung Feet → Meter (wenn nötig)
+    $swht_m = convertFeetToMeter($entry['swht']);
+    $wwh_m  = convertFeetToMeter($entry['wwh']);
+
+    // Schwierigkeitsstufe bestimmen
+    $condition = determineCondition($swht_m);
+
+    // Zeitformat anpassen
+    $time = date('Y-m-d H:i:s', strtotime($entry['time']));
+
+    // Validiere Pflichtfelder
+    if (empty($bojen_id) || empty($name) || empty($swht_m) || empty($time)) {
+        throw new Exception("Fehlende Pflichtfelder bei Datensatz mit Zeit: " . $entry['time']);
+    }
+
+    // Neues Datenelement zusammenstellen
     $transformedData[] = [
-        'location' => $city,
-        'temperature_celsius' => $temperatureCelsius,
-        'rain' => $location['current']['rain'],
-        'showers' => $location['current']['showers'],
-        'snowfall' => $location['current']['snowfall'],
-        'cloud_cover' => $location['current']['cloud_cover'],
-        'condition' => $condition // Fügt das Feld 'condition' hinzu
+        'bojen_id' => $bojen_id,
+        'name'     => $name,
+        'swht'     => $swht_m,
+        'swd'      => $entry['swd'],
+        'wwh'      => $wwh_m,
+        'wwd'      => $entry['wwd'],
+        'time'     => $time,
+        'condition'=> $condition
     ];
 }
 
-// Kodiert die transformierten Daten in JSON
+// Kodiert die transformierten Daten in JSON (zur Weiterverarbeitung oder Debug)
 $jsonData = json_encode($transformedData, JSON_PRETTY_PRINT);
 
-// Optional kann das JSON ausgegeben werden, um die Ausgabe zu sehen
+// Optional: Ausgeben zum Test
 echo $jsonData;
 
-// Wenn dies in eine Datei gespeichert werden soll, kommentieren Sie die folgende Zeile aus
-// file_put_contents('transformed_weather_data.json', $jsonData);
+echo "<pre>";
+print_r($transformedData);
+echo "</pre>";
+
+// Alternativ zurückgeben, falls dieses Skript von load.php o.ä. eingebunden wird
+// return $transformedData;
 
 ?>
