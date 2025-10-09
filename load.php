@@ -13,7 +13,7 @@ try {
     $pdo = new PDO($dsn, $username, $password, $options);
 
     // SQL-Query mit Platzhaltern für das Einfügen von Daten
-    $sql = "INSERT INTO wellenradar (bojen_id, name, swht, snowfall, cloud_cover, weather_condition) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO wellenradar (bojen_id, name, swht, swd, wwh, wwd) VALUES (?, ?, ?, ?, ?, ?)";
 
     // Bereitet die SQL-Anweisung vor
     $stmt = $pdo->prepare($sql);
@@ -21,13 +21,12 @@ try {
     // Fügt jedes Element im Array in die Datenbank ein
     foreach ($dataArray as $item) {
         $stmt->execute([
-            $item['location'],
-            $item['temperature_celsius'],
-            $item['rain'],
-            $item['showers'],
-            $item['snowfall'],
-            $item['cloud_cover'],
-            $item['condition']
+            $item['bojen_id'],
+            $item['name'],
+            $item['swht'],
+            $item['swd'],
+            $item['wwh'],
+            $item['wwd'],
         ]);
     }
 
