@@ -6,17 +6,17 @@
       <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="styles.css">
     <title>Wellenradar</title>
-     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
 </head>
 <body>
-    <h1>Wellenradar</h1>
      <!--<p>Verwendet neuen API-Endpunkt 550 mit Limit-Funktion (Funktion aktuell nicht genutzt)</p> -->
-    <canvas id="wellenChart"></canvas>
-    <script src="script.js"></script>
+    <!-- <canvas id="wellenChart"></canvas> 
+    <script src="script.js"></script> -->
 
 
     <section class="titel">
     <div class="h1_wellenradar">
+      <h1>    Wellenradar </h1>
     </div>
     <div class="h2_california">
         <h2>    California </h2>
@@ -28,23 +28,18 @@
             <img src="designs/maps/California_desktop.png" alt="California Map" class="background-image">
         
             <!-- Icons Wellen direkt in denselben Container! -->
-            <img src="designs/wellen/welle_klein.png" class="welle welle_1 cta">
-            <img src="designs/wellen/welle_gross.png" class="welle welle_2 cta">
-            <img src="designs/wellen/welle_gross.png" class="welle welle_3 cta">
-            <img src="designs/wellen/welle_klein.png" class="welle welle_4 cta">
-            <img src="designs/wellen/welle_klein.png" class="welle welle_5 cta">
+            <img src="designs/wellen/welle_klein.png" class="welle welle_1 cta" data-info="Albion">
+            <img src="designs/wellen/welle_gross.png" class="welle welle_2 cta" data-info="SanFrancisco">
+            <img src="designs/wellen/welle_gross.png" class="welle welle_3 cta" data-info="Diablo">
+            <img src="designs/wellen/welle_klein.png" class="welle welle_4 cta" data-info="Topanga">
+            <img src="designs/wellen/welle_klein.png" class="welle welle_5 cta" data-info="ImperialBeach">
+            
+            <!-- Info-Box -->
+            <div id="infoBox" class="info-box hidden"></div>
     </div>
     </section>
-
+    <script src="script.js"></script>
 
   
 </body>
-</html>
-
-
-
-
-  <body>
-
-  </body>
 </html>

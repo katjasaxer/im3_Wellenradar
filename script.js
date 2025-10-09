@@ -11,7 +11,7 @@
    9) Performance: große Responses paginieren/filtern; Redraws minimieren.
   10) Sicherheit: Keine geheimen Keys im Frontend; nur öffentliche Endpunkte nutzen.
    ============================================================================ */
-
+/*
 document.addEventListener("DOMContentLoaded", () => {
   const apiUrl = "https://im3.aare-jetzt.ch/unload.php"; // Passen Sie die URL bei Bedarf an
 
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         tension: 0.1, // Gibt der Linie im Diagramm eine leichte Kurve
       }));
 
-      Uncomment to create the chart
+      //Uncomment to create the chart//
       new Chart(ctx, {
         type: "line",
         data: {
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
           },
         },
       });
-      */
+      
     })
     .catch((error) => console.error("Fetch-Fehler:", error)); // Gibt Fehler im Konsolenlog aus, falls die Daten nicht abgerufen werden können
 
@@ -67,4 +67,50 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     return color; // Erzeugt eine zufällige Farbe
   }
+}); */
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const waves = document.querySelectorAll('.welle');
+  const infoBox = document.getElementById('infoBox');
+  const map = document.querySelector('.map');
+
+  waves.forEach(wave => {
+    wave.addEventListener('click', (event) => {
+      event.stopPropagation(); // verhindert, dass das Dokument den Klick abfängt
+
+      const rect = wave.getBoundingClientRect();
+      const mapRect = map.getBoundingClientRect();
+
+      // Position der Info-Box (links vom Icon)
+      const boxLeft = rect.left - mapRect.left - 620;
+      const boxTop = rect.top - mapRect.top - 20;
+
+      // Box positionieren
+      infoBox.style.left = `${boxLeft}px`;
+      infoBox.style.top = `${boxTop}px`;
+
+      // Inhalt der Box (später dynamisch befüllbar)
+      infoBox.innerHTML = `
+  <div class="box-content">
+    <img src="designs/insel.png" alt="Surfergirl" class="info-image" height="200px" width="150px">
+    <div class="info-text">
+      <h3>${wave.dataset.info}</h3>
+    </div>
+  </div>
+`;
+      // Box sichtbar machen
+      infoBox.classList.remove('hidden');
+      infoBox.classList.add('visible');
+    });
+  });
+
+  // Klick außerhalb der Wellen → Info-Box schließen
+  document.addEventListener('click', (e) => {
+    if (!e.target.classList.contains('welle')) {
+      infoBox.classList.add('hidden');
+      infoBox.classList.remove('visible');
+    }
+  });
 });
+
