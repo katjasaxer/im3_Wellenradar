@@ -83,9 +83,6 @@
     width: 8%; /* skalierbar mit dem Bild */
     z-index: 2; /* Icons über dem Bild */
     cursor: pointer;
-    transform: translate(-50%, -50%);
-    transition: transform 0.3s ease; /* sanfte Animation */
-
   }
 
   /* Positionen relativ zum Bild (anpassen nach Bedarf) */
@@ -107,19 +104,27 @@
     height: 55px;
   }
   .welle_4 { 
-    top: 81%;
+    top: 78%;
     left: 51%; 
     width: 55px;
     height: 55px;
   }
   .welle_5 { 
-    top: 88%;
-    left: 65%; 
+    top: 84%;
+    left: 62%; 
     width: 55px;
     height: 55px;
   }
+  
+  .welle.cta {
+    transition: ease-in 0.5 s; /* Weicher Übergang beim Hover */
   }
 
+  .welle.cta:hover {
+      width: 65px;
+      height: 65px;
+  }
+}
 
         @media (max-width: 1024px) { /*wenn grösser als mobile-Layout, dann wechselt es auf Desktop (tablet-layout wird übersprungen)*/
           body {
@@ -168,7 +173,7 @@
             position: relative; /* macht das Bild zum Bezugspunkt für absolute Positionierung */
             width: 100%;
             max-width: 600px;
-            margin-top: 45%;
+            margin-top: 43%;
           }
           
           .map img.background-image {
@@ -184,10 +189,7 @@
             position: absolute;
             width: 8%; /* skalierbar mit dem Bild */
             z-index: 2; /* Icons über dem Bild */
-            cursor: pointer;
-            transform: translate(-50%, -50%);
-            transition: transform 0.3s ease; /* sanfte Animation */
-        
+            cursor: pointer;        
           }
         
           /* Positionen relativ zum Bild (anpassen nach Bedarf) */
@@ -209,7 +211,7 @@
             height: 50px;
           }
           .welle_4 { 
-            top: 81%;
+            top: 82%;
             left: 51%; 
             width: 50px;
             height: 50px;
@@ -219,5 +221,13 @@
             left: 65%; 
             width: 50px;
             height: 50px;
+          }
+          .welle.cta {
+            transition: ease-in 0.5 s; /* Weicher Übergang beim Hover */
+          }
+        
+          .welle.cta:hover {
+              width: 55px;
+              height: 55px;
           }
         }
