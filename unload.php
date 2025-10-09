@@ -14,9 +14,25 @@
    ============================================================================ */
 
 
-require_once '../config.php'; // Stellen Sie sicher, dass dies auf Ihre tatsächliche Konfigurationsdatei verweist
+require_once 'config.php'; 
 
+// Header setzen, um JSON-Inhaltstyp zurückzugeben
 header('Content-Type: application/json');
 
+try {
+    $pdo = new PDO($dsn, $username, $password, $options);
+
+    $sql = "SELECT * FROM wellenradar";
+    $stmt = $pdo->prepare($sql);
+    $stmt->execute();
+    $resulsts = $stmt->fetchAll();
+
+    echo json_encode($resulsts, JSON_PRETTY_PRINT);
+
+} catch (PDOException $e) {
+   http_response_code(500);
+   echo json_encode(['error' =>'Datenbankverbindung fehlgeschlagen.']);
+   exit;
+}
 
 ?>
