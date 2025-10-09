@@ -76,3 +76,4 @@ $jsonData = json_encode($transformedData, JSON_PRETTY_PRINT);
 // Gibt die JSON-Daten zurück, anstatt sie auszugeben
 return $jsonData;
 
+?>
