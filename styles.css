@@ -81,163 +81,143 @@
   .welle {
     position: absolute;
     width: 8%; /* skalierbar mit dem Bild */
-    transform: translate(-50%, -50%);
     z-index: 2; /* Icons über dem Bild */
     cursor: pointer;
+    transform: translate(-50%, -50%);
+    transition: transform 0.3s ease; /* sanfte Animation */
+
   }
 
   /* Positionen relativ zum Bild (anpassen nach Bedarf) */
   .welle_1 { 
-    top: 5%;
-    left: 30%; 
-    width: 50px;
-    height: 50px;
+    top: 25%;
+    left: 17%; 
+    width: 55px;
+    height: 55px;
   }
   .welle_2 {
-    top: 5%;
-    left: 30%; 
-    width: 50px;
-    height: 50px; }
+    top: 49%;
+    left: 25%; 
+    width: 55px;
+    height: 55px; }
   .welle_3 { 
-    top: 5%;
-    left: 30%; 
-    width: 50px;
-    height: 50px;
+    top: 60%;
+    left: 33%; 
+    width: 55px;
+    height: 55px;
   }
   .welle_4 { 
-    top: 5%;
-    left: 30%; 
-    width: 50px;
-    height: 50px;
+    top: 81%;
+    left: 51%; 
+    width: 55px;
+    height: 55px;
   }
   .welle_5 { 
-    top: 5%;
-    left: 30%; 
-    width: 50px;
-    height: 50px;
+    top: 88%;
+    left: 65%; 
+    width: 55px;
+    height: 55px;
+  }
   }
 
 
-
-  @media (max-width: 1024px) { /*wenn grösser als mobile-Layout, dann wechselt es auf Desktop (tablet-layout wird übersprungen)*/
-    body {
-      background-color: var(--hintergrund);
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      display: flex;
-      flex-direction: column; /* Inhalte untereinander anordnen */
-      align-items: center;    /* horizontal zentrieren */
-      display: flex;
-      justify-content: center;  /* horizontal zentrieren */
-      align-items: center;      /* vertikal zentrieren */
-      overflow: hidden; /*scrollen verhindern */
-    }
-  
-    .titel {
-      text-align: center;
-      margin-top: 1%;
-    }
-    
-    .h1_wellenradar {
-      font-family: 'mighty-souly'; /* Beispiel-Schrift für Wellenradar */
-      font-size: 30px;                        
-      margin: 0px;
-      color: var(--dunkelblau);
-      margin-top: -30px;
-    }
-    
-    .h2_california {
-      font-family: 'mina-regular';  /* andere Schrift für California */
-      font-size: 20px;                      
-      margin: 0px;
-      color: var(--dunkelblau);
-      margin-top: -50px;
-    }
-  
-    .inhalt {
-      display: flex;
-      justify-content: flex-end; /* Bild nach rechts verschieben */
-    }
-  
-  .map img {
-      width: 420px;
-      margin-top: 40%;
-      max-width: 420px;
-  }
-  }
-  
-    
-/*Struktur und Layout-------------------------*/
-
-
-
-
-/*Responsive Mobile: bis 768px----------------
-@media (max-width: 768px) {
-  .inhalte {
-    flex-direction: column;
-    align-items: center;
-    padding-bottom: 10px;
-  }
-  .titel {
-    font-size: 35px;
-  }
-  .h2_aarehöt {
-    font-size: 30px;
-  }
-  .h3_in {
-    font-size: 25px;
-  }
-  .hauptbox {
-    width: 330px;
-    height: 330px;
-    padding: 10px;
-  }
-  .button-container {
-    flex-direction: row;
-    align-items: center;
-    column-gap: 15px;
-    justify-content: space-evenly;
-  }
-  .icon-container-luft {
-    margin-right: 8px;
-  }
-  .icon-container-wasser {
-    margin-left: 8px;
-  }
-  .temperaturanzeige {
-    font-size: 55px;
-  }
-  #dateAndtime {
-    font-size: 16px;
-  }
-  #airTempImg, #waterTempImg {
-    width: 80px;
-    height: 80px;
-  }
-  #wrapper {
-    width: 60px;
-    height: 200px;
-  }
-  #termometer {
-    width: 22px;
-    height: 200px;
-    border: 6px solid var(--dunkelblau);
-    border-radius: 16px;
-    margin-bottom: 40px;
-  }
-  #termometer:after {
-    width: 42px;
-    height: 42px;
-    bottom: -34px;
-    border: 6px solid var(--dunkelblau);
-  }
-  #temperature {
-    border-radius: 14px;
-    background-size: 100% 140px;
-  }
-  #temperature:before {
-    font-size: 0.9em;
-  }
-} */ 
+        @media (max-width: 1024px) { /*wenn grösser als mobile-Layout, dann wechselt es auf Desktop (tablet-layout wird übersprungen)*/
+          body {
+            background-color: var(--hintergrund);
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: column; /* Inhalte untereinander anordnen */
+            align-items: center;    /* horizontal zentrieren */
+            display: flex;
+            justify-content: center;  /* horizontal zentrieren */
+            align-items: center;      /* vertikal zentrieren */
+            overflow: hidden; /*scrollen verhindern */
+          }
+        
+          .titel {
+            text-align: center;
+            margin-top: 1%;
+          }
+          
+          .h1_wellenradar {
+            font-family: 'mighty-souly'; /* Beispiel-Schrift für Wellenradar */
+            font-size: 30px;                        
+            margin: 0px;
+            color: var(--dunkelblau);
+            margin-top: -30px;
+          }
+          
+          .h2_california {
+            font-family: 'mina-regular';  /* andere Schrift für California */
+            font-size: 20px;                      
+            margin: 0px;
+            color: var(--dunkelblau);
+            margin-top: -50px;
+          }
+        
+          .inhalt {
+            width: 100%;
+            display: flex;
+            justify-content: right;
+            margin-top: -40px;
+          }
+          
+          .map {
+            position: relative; /* macht das Bild zum Bezugspunkt für absolute Positionierung */
+            width: 100%;
+            max-width: 600px;
+            margin-top: 45%;
+          }
+          
+          .map img.background-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            position: relative;
+            z-index: 1; /* Bild bleibt unten */
+          }
+          
+          /* Icons */
+          .welle {
+            position: absolute;
+            width: 8%; /* skalierbar mit dem Bild */
+            z-index: 2; /* Icons über dem Bild */
+            cursor: pointer;
+            transform: translate(-50%, -50%);
+            transition: transform 0.3s ease; /* sanfte Animation */
+        
+          }
+        
+          /* Positionen relativ zum Bild (anpassen nach Bedarf) */
+          .welle_1 { 
+            top: 25%;
+            left: 17%; 
+            width: 50px;
+            height: 50px;
+          }
+          .welle_2 {
+            top: 49%;
+            left: 25%; 
+            width: 50px;
+            height: 50px; }
+          .welle_3 { 
+            top: 60%;
+            left: 33%; 
+            width: 50px;
+            height: 50px;
+          }
+          .welle_4 { 
+            top: 81%;
+            left: 51%; 
+            width: 50px;
+            height: 50px;
+          }
+          .welle_5 { 
+            top: 88%;
+            left: 65%; 
+            width: 50px;
+            height: 50px;
+          }
+        }
