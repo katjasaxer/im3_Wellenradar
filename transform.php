@@ -18,8 +18,8 @@
 // Bindet das Skript extract.php für Rohdaten ein und speichere es in $data
 $data = include('extract.php');
 
-// Definiert eine Zuordnung von Bojen-ID zu Standortnamen
-print_r($data);
+// Debug-Ausgabe der rohen Daten
+//print_r($data);
 
 // Funktion, um Feet in Meter umzuwandeln (falls nötig)
 function convertFeetToMeter($feet) {
@@ -28,7 +28,7 @@ function convertFeetToMeter($feet) {
 
 // Funktion zur Bestimmung der Surf-Bedingung
 function determineCondition($swht) {
-    if ($swht > 2) {
+    if ($swht > 1) {
         return 'Advanced';
     } else {
         return 'Beginner';
@@ -37,4 +37,42 @@ function determineCondition($swht) {
 
 // Initialisiert ein Array, um die transformierten Daten zu speichern
 $transformedData = [];
+
+// Durchläuft alle empfangenen Bojen-Datensätze
+foreach ($data as $item) {
+    // Sicherheitshalber: Prüfe, ob notwendige Keys existieren
+    if (!isset($item['id']) || !isset($item['name']) || !isset($item['swht'])) {
+        continue;
+    }
+
+    // Umwandlung Feet → Meter (falls Daten in Feet geliefert werden)
+    $swht_m = is_numeric($item['swht']) ? convertFeetToMeter($item['swht']) : 0;
+    $wwh_m  = is_numeric($item['wwh']) ? convertFeetToMeter($item['wwh']) : 0;
+
+    // SQL-kompatibles Zeitformat
+    $timeFormatted = date('Y-m-d H:i:s', strtotime($item['time']));
+
+    // Surfbedingung bestimmen
+    $condition = determineCondition($swht_m);
+
+    // Transformation in gewünschte Struktur
+    $transformedData[] = [
+        'bojen_id' => $item['id'],
+        'name'     => $item['name'],
+        'swht'     => $swht_m,
+        'swd'      => $item['swd'] ?? '',
+        'wwh'      => $wwh_m,
+        'wwd'      => $item['wwd'] ?? '',
+        'time'     => $timeFormatted,
+        'condition'=> $condition
+    ];
+   
+}
+
+// Kodiert die transformierten Daten in JSON
+$jsonData = json_encode($transformedData, JSON_PRETTY_PRINT);
+ print_r($jsonData);
+ 
+// Gibt die JSON-Daten zurück, anstatt sie auszugeben
+return $jsonData;
 

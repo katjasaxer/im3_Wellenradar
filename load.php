@@ -1,19 +1,19 @@
 <?php
 
 // Transformations-Skript  als '230_transform.php' einbinden
-$jsonData = include('230_transform.php');
+$jsonData = include('transform.php');
 
 // Dekodiert die JSON-Daten zu einem Array
 $dataArray = json_decode($jsonData, true);
 
-require_once '../../config.php'; // Bindet die Datenbankkonfiguration ein
+require_once 'config.php'; // Bindet die Datenbankkonfiguration ein
 
 try {
     // Erstellt eine neue PDO-Instanz mit der Konfiguration aus config.php
     $pdo = new PDO($dsn, $username, $password, $options);
 
     // SQL-Query mit Platzhaltern für das Einfügen von Daten
-    $sql = "INSERT INTO weather_data (location, temperature_celsius, rain, showers, snowfall, cloud_cover, weather_condition) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    $sql = "INSERT INTO wellenradar (bojen_id, name, swht, snowfall, cloud_cover, weather_condition) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
     // Bereitet die SQL-Anweisung vor
     $stmt = $pdo->prepare($sql);
