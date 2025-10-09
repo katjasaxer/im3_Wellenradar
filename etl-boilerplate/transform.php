@@ -93,7 +93,7 @@ echo $jsonData;
 
 echo "<pre>";
 print_r($transformedData);
-echo "</pre>";
+echo "</pre>";
 
 // Alternativ zurückgeben, falls dieses Skript von load.php o.ä. eingebunden wird
 // return $transformedData;
