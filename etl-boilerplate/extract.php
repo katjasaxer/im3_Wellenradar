@@ -38,5 +38,5 @@ function fetchBuoyData()
 // Gibt die Daten zurück, wenn dieses Skript eingebunden ist
     return fetchBuoyData();
 
-
+?>
 
