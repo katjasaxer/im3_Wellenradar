@@ -1,7 +1,7 @@
 <?php
-$data = ['firstname' => 'Öusi',
-        'lastname' => 'Kätle',
-        'email' => 'öusi.kätle@fhgr.ch'
+$data = ['firstname' => 'Eliane',
+        'lastname' => 'Katja',
+        'email' => 'eliane.katja@fhgr.ch'
 ];
 
 require_once 'config.php';
