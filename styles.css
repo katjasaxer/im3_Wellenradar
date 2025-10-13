@@ -142,7 +142,7 @@
 
 .info-box.visible {
   opacity: 1;
-  transform: scale(1);
+  pointer-events: all;
 }
 
 .info-box.hidden {
@@ -150,6 +150,30 @@
   pointer-events: none;
 } 
 
+/* ----- Inhalt: Titel über Bild, alles zentriert ----- */
+.box-content {
+  display: flex;
+  flex-direction: column; /* untereinander */
+  align-items: center;     /* horizontal zentriert */
+  gap: 10px;
+}
+
+/* Titel */
+.info-text h3 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--dunkelblau);
+  font-weight: 600;
+}
+
+/* Bild */
+.info-image {
+  width: 150px;
+  height: 200px;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+}
 
 
 

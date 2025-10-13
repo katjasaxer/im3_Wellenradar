@@ -87,9 +87,9 @@ document.addEventListener('DOMContentLoaded', () => {
       // Inhalt der Box (später dynamisch befüllbar)
       infoBox.innerHTML = `
         <div class="box-content">
-          <img src="designs/insel.png" alt="Surfergirl" class="info-image" height="200px" width="150px">
-          <div class="info-text">
+            <div class="info-text">
             <h3>${wave.dataset.info}</h3>
+          <img src="designs/insel.png" alt="Surfergirl" class="info-image" height="200px" width="150px">
           </div>
         </div>
       `;
