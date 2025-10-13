@@ -163,6 +163,7 @@
   flex-direction: column; /* untereinander */
   align-items: center;     /* horizontal zentriert */
   gap: 10px;
+  max-height: 20px;
 }
 
 /* Titel */
