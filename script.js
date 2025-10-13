@@ -56,38 +56,53 @@ document.addEventListener("DOMContentLoaded", () => {
   const apiUrl = "https://im3.aare-jetzt.ch/unload.php"; // Passen Sie die URL bei Bedarf an
 
   fetch(apiUrl)
-    .then((response) => response.json())
-    .then((data) => {
-  console.log("Abgerufene Daten:", data);
+  .then(response => response.json())
+  .then(data => {
+    console.log("Abgerufene Daten:", data);
 
-      const ctx = document.getElementById("wellenChart").getContext("2d");
+    // 1️⃣ Group data by buoy name
+    const grouped = data.reduce((acc, entry) => {
+      const name = entry.name;
+      if (!acc[name]) acc[name] = [];
+      acc[name].push(entry);
+      return acc;
+    }, {});
 
-      const datasets = Object.keys(data).map((boje) => ({
-        label: boje,
-        data: data[boje].map((item) => item.wellen_höhe),
-        fill: false,
-        borderColor: getRandomColor(), // Generiert eine zufällige Farbe für jede Stadtlinie im Diagramm
-        tension: 0.1, // Gibt der Linie im Diagramm eine leichte Kurve
-      }));
+    // 2️⃣ Get context for Chart.js
+    const ctx = document.getElementById("wellenChart").getContext("2d");
 
-      //Uncomment to create the chart//
-      new Chart(ctx, {
-        type: "line",
-        data: {
-          labels: data["Albion"].map((item) => new Date(item.created_at).toLocaleDateString()), // Nimmt an, dass alle Städte Daten für dieselben Daten haben
-          datasets: datasets,
-        },
-        options: {
-          scales: {
-            y: {
-              beginAtZero: false, // Startet die y-Achse nicht bei 0, um einen besseren Überblick über die Schwankungen zu geben
-            },
+    // 3️⃣ Build datasets for each buoy
+    const datasets = Object.keys(grouped).map(name => ({
+      label: name,
+      data: grouped[name].map(item => item.swht), // or item.wwh, whichever you want
+      fill: false,
+      borderColor: getRandomColor(),
+      tension: 0.1,
+    }));
+
+    // 4️⃣ Labels (x-axis) — use times from the first buoy
+    const labels = grouped[Object.keys(grouped)[0]].map(
+      item => new Date(item.time).toLocaleTimeString()
+    );
+
+    // 5️⃣ Create chart
+    new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: labels,
+        datasets: datasets,
+      },
+      options: {
+        scales: {
+          y: {
+            beginAtZero: false,
           },
         },
-      });
-      
-    })
-    .catch((error) => console.error("Fetch-Fehler:", error)); // Gibt Fehler im Konsolenlog aus, falls die Daten nicht abgerufen werden können
+      },
+    });
+  })
+  .catch(error => console.error("Fetch-Fehler:", error));
+
 
   function getCityColor(city) {
     const wellenFarben = {
