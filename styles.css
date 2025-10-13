@@ -168,6 +168,8 @@
 
 /* Titel */
 .info-text {
+  display: flex;
+  flex-direction: column; /* untereinander */
   margin-top: -5%;
   font-size: 30px;
   color: var(--dunkelblau);
