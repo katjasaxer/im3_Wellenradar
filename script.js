@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="box-content">
             <div class="info-text">
             <h3>${wave.dataset.info}</h3>
-          <img src="designs/insel.png" alt="Surfergirl" class="info-image" height="200px" width="150px">
+          <img src="designs/boards/girl_beginnerboard.png" alt="Surfergirl" class="info-image" >
           </div>
         </div>
       `;

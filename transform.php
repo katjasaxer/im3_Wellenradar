@@ -21,14 +21,14 @@ $data = include('extract.php');
 // Debug-Ausgabe der rohen Daten
 //print_r($data);
 
-// Funktion, um Feet in Meter umzuwandeln (falls nötig)
-function convertFeetToMeter($feet) {
-    return round($feet * 0.3048, 2);
-}
+/* Funktion, um Feet in Meter umzuwandeln (falls nötig)
+    function convertFeetToMeter($feet) {
+   return round($feet * 0.3048, 2);
+} */
 
 // Funktion zur Bestimmung der Surf-Bedingung
 function determineCondition($swht) {
-    if ($swht > 1) {
+    if ($swht > 1.5) {
         return 'Advanced';
     } else {
         return 'Beginner';
@@ -46,8 +46,8 @@ foreach ($data as $item) {
     }
 
     // Umwandlung Feet → Meter (falls Daten in Feet geliefert werden)
-    $swht_m = is_numeric($item['swht']) ? convertFeetToMeter($item['swht']) : 0;
-    $wwh_m  = is_numeric($item['wwh']) ? convertFeetToMeter($item['wwh']) : 0;
+   /* $swht_m = is_numeric($item['swht']) ? convertFeetToMeter($item['swht']) : 0;
+    $wwh_m  = is_numeric($item['wwh']) ? convertFeetToMeter($item['wwh']) : 0; */
 
     // SQL-kompatibles Zeitformat
     $timeFormatted = date('Y-m-d H:i:s', strtotime($item['time']));

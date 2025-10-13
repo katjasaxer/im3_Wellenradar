@@ -168,10 +168,9 @@
 
 /* Bild */
 .info-image {
-  width: 150px;
-  height: 200px;
+  width: 120px;
+  height: 150px;
   border-radius: 8px;
-  object-fit: cover;
   display: block;
 }
 
