@@ -15,7 +15,7 @@
   
         infoBox.style.position = 'fixed';
         infoBox.style.left = '200px';
-        infoBox.style.top = '320px';
+        infoBox.style.top = '450px';
         infoBox.style.transform = 'translateY(-50%)';
 
      // Bild je nach swht auswählen
