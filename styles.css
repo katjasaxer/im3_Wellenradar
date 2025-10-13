@@ -181,8 +181,7 @@
   height: 150px;
   border-radius: 8px;
   display: block;
-  align-items: center;
-  justify-content: center;
+  margin: 0, auto;
 
 }
 
