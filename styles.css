@@ -184,9 +184,10 @@
   border-radius: 8px;
   display: block;
   margin: 0, auto;
-
 }
-
+.wellenChart {
+  max-height: 50px;
+}
 
 
 
