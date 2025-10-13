@@ -73,32 +73,27 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener('DOMContentLoaded', () => {
   const waves = document.querySelectorAll('.welle');
   const infoBox = document.getElementById('infoBox');
-  const map = document.querySelector('.map');
 
   waves.forEach(wave => {
     wave.addEventListener('click', (event) => {
       event.stopPropagation(); // verhindert, dass das Dokument den Klick abfängt
 
-      const rect = wave.getBoundingClientRect();
-      const mapRect = map.getBoundingClientRect();
-
-      // Position der Info-Box (links vom Icon)
-      const boxLeft = rect.left - mapRect.left - 620;
-      const boxTop = rect.top - mapRect.top - 20;
-
-      // Box positionieren
-      infoBox.style.left = `${boxLeft}px`;
-      infoBox.style.top = `${boxTop}px`;
+      // Position der Info-Box (immer fix links am Bildschirm)
+      infoBox.style.position = 'fixed';
+      infoBox.style.left = '250px'; // Abstand vom linken Bildschirmrand
+      infoBox.style.top = '420px';   // mittig im Bildschirm
+      infoBox.style.transform = 'translateY(-50%)';
 
       // Inhalt der Box (später dynamisch befüllbar)
       infoBox.innerHTML = `
-  <div class="box-content">
-    <img src="designs/insel.png" alt="Surfergirl" class="info-image" height="200px" width="150px">
-    <div class="info-text">
-      <h3>${wave.dataset.info}</h3>
-    </div>
-  </div>
-`;
+        <div class="box-content">
+            <div class="info-text">
+            <h3>${wave.dataset.info}</h3>
+          <img src="designs/insel.png" alt="Surfergirl" class="info-image" height="200px" width="150px">
+          </div>
+        </div>
+      `;
+
       // Box sichtbar machen
       infoBox.classList.remove('hidden');
       infoBox.classList.add('visible');
@@ -113,4 +108,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 });
+
 

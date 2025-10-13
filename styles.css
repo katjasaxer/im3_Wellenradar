@@ -127,39 +127,56 @@
 /* Info-Box */
 .info-box {
   position: absolute;
-  width: 500px;
+  width: 400px;
+  height: 500px;
   background: white;
   border-radius: 10px;
-  box-shadow: 0 6px 12px var(--dunkelblau);
   padding: 10px 15px;
   font-family: 'mina-regular', sans-serif;
-  color: var(--mittelblau);
   opacity: 0;
   transform: scale(0.9);
   transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 5;
+  color: var(--dunkelblau);
 }
 
 .info-box.visible {
   opacity: 1;
-  transform: scale(1);
+  pointer-events: all;
 }
 
 .info-box.hidden {
   opacity: 0;
   pointer-events: none;
+} 
+
+/* ----- Inhalt: Titel über Bild, alles zentriert ----- */
+.box-content {
+  display: flex;
+  flex-direction: column; /* untereinander */
+  align-items: center;     /* horizontal zentriert */
+  gap: 10px;
 }
 
-/* kleiner Pfeil */
-.info-box::before {
-  content: "";
-  position: absolute;
-  right: -10px;
-  top: 20px;
-  border-width: 8px;
-  border-style: solid;
-  border-color: transparent transparent transparent white;
+/* Titel */
+.info-text h3 {
+  margin: 0;
+  font-size: 18px;
+  color: var(--dunkelblau);
+  font-weight: 600;
 }
+
+/* Bild */
+.info-image {
+  width: 150px;
+  height: 200px;
+  border-radius: 8px;
+  object-fit: cover;
+  display: block;
+}
+
+
+
 
         @media (max-width: 1024px) { /*wenn grösser als mobile-Layout, dann wechselt es auf Desktop (tablet-layout wird übersprungen)*/
           body {
