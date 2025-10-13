@@ -14,8 +14,8 @@
         event.stopPropagation();
   
         infoBox.style.position = 'fixed';
-        infoBox.style.left = '20%';
-        infoBox.style.top = '35%';
+        infoBox.style.left = '15%';
+        infoBox.style.top = '60%';
         infoBox.style.transform = 'translateY(-50%)';
 
      // Bild je nach swht auswählen

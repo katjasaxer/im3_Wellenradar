@@ -134,8 +134,8 @@
 /* Info-Box */
 .info-box {
   position: absolute;
-  width: 400px;
-  height: 500px;
+  width: 370px;
+  height: 400px;
   background: white;
   border-radius: 10px;
   padding: 10px 15px;
@@ -168,7 +168,7 @@
 
 /* Titel */
 .info-text {
-  margin: 0;
+  margin-top: -5%;
   font-size: 30px;
   color: var(--dunkelblau);
   font-weight: 600;
@@ -181,6 +181,9 @@
   height: 150px;
   border-radius: 8px;
   display: block;
+  align-items: center;
+  justify-content: center;
+
 }
 
 
