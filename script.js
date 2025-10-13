@@ -13,16 +13,16 @@
       wave.addEventListener('click', (event) => {
         event.stopPropagation();
   
-        infoBox.style.position = 'absolute';
+        infoBox.style.position = 'fixed';
         infoBox.style.left = '200px';
         infoBox.style.top = '320px';
         infoBox.style.transform = 'translateY(-50%)';
 
      // Bild je nach swht auswählen
-      const swell = parseFloat(wave.dataset.swht || 0);
-      const boardImg = swell > 1.5 
-       ? "designs/boards/girl_advancedboard.png" 
-       : "designs/boards/girl_beginnerboard.png";
+  const swell = parseFloat(wave.dataset.swht || 0);
+  const boardImg = swell > 1.5 
+    ? "designs/boards/girl_advancedboard.png" 
+    : "designs/boards/girl_beginnerboard.png";
   
         infoBoxContent.innerHTML = `
           <div class="box-content">
