@@ -13,9 +13,9 @@
       wave.addEventListener('click', (event) => {
         event.stopPropagation();
   
-        infoBox.style.position = 'fixed';
-        infoBox.style.left = '250px';
-        infoBox.style.top = '420px';
+        infoBox.style.position = 'absolute';
+        infoBox.style.left = '200px';
+        infoBox.style.top = '320px';
         infoBox.style.transform = 'translateY(-50%)';
 
      // Bild je nach swht auswählen
