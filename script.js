@@ -7,6 +7,7 @@
     /* --- Wellen-Box-Interaktion --- */
     const waves = document.querySelectorAll('.welle');
     const infoBox = document.getElementById('infoBox');
+    const infoBoxContent = document.getElementById('infoBoxContent');
   
     waves.forEach(wave => {
       wave.addEventListener('click', (event) => {
@@ -17,7 +18,7 @@
         infoBox.style.top = '420px';
         infoBox.style.transform = 'translateY(-50%)';
   
-        infoBox.innerHTML = `
+        infoBoxContent.innerHTML = `
           <div class="box-content">
             <div class="info-text">
               <h3>${wave.dataset.info}</h3>
