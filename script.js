@@ -24,7 +24,7 @@
               <img src="designs/boards/girl_beginnerboard.png" 
                    alt="Surfergirl" class="info-image">
             </div>
-
+            <canvas id="wellenChart" width="600" height="300"></canvas> 
           </div>
         `;
   
