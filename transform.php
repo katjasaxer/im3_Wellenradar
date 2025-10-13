@@ -19,7 +19,7 @@
 $data = include('extract.php');
 
 // Debug-Ausgabe der rohen Daten
-//print_r($data);
+print_r($data);
 
 /* Funktion, um Feet in Meter umzuwandeln (falls nötig)
     function convertFeetToMeter($feet) {
@@ -45,6 +45,9 @@ foreach ($data as $item) {
         continue;
     }
 
+    // Surfbedingung bestimmen
+    $condition = determineCondition($item['swht']);
+
     // Umwandlung Feet → Meter (falls Daten in Feet geliefert werden)
    /* $swht_m = is_numeric($item['swht']) ? convertFeetToMeter($item['swht']) : 0;
     $wwh_m  = is_numeric($item['wwh']) ? convertFeetToMeter($item['wwh']) : 0; */
@@ -52,16 +55,14 @@ foreach ($data as $item) {
     // SQL-kompatibles Zeitformat
     $timeFormatted = date('Y-m-d H:i:s', strtotime($item['time']));
 
-    // Surfbedingung bestimmen
-    $condition = determineCondition($swht_m);
-
+    
     // Transformation in gewünschte Struktur
     $transformedData[] = [
         'bojen_id' => $item['id'],
         'name'     => $item['name'],
-        'swht'     => $swht_m,
+        'swht'     => $item['swht'],
         'swd'      => $item['swd'] ?? '',
-        'wwh'      => $wwh_m,
+        'wwh'      => $item['wwh'],
         'wwd'      => $item['wwd'] ?? '',
         'time'     => $timeFormatted,
         'condition'=> $condition
