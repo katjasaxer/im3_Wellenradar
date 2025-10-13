@@ -21,8 +21,8 @@
      // Bild je nach swht auswählen
   const swell = parseFloat(wave.dataset.swht || 0);
   const boardImg = swell > 1.5 
-    ? "designs/boards/girl_advancedboard.png" 
-    : "designs/boards/girl_beginnerboard.png";
+    ? "designs/girl_advancedboard.png" 
+    : "designs/girl_beginnerboard.png";
   
         infoBoxContent.innerHTML = `
           <div class="box-content">
