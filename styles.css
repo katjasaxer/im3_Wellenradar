@@ -172,6 +172,8 @@
   font-size: 30px;
   color: var(--dunkelblau);
   font-weight: 600;
+  align-items: center;
+  justify-content: center;
 }
 
 /* Bild */
@@ -336,6 +338,7 @@
             align-items: center;
             justify-content: center;
             position: absolute;
+            top: 430px;
           }
 
           .info-box.hidden {
