@@ -11,8 +11,48 @@
    9) Performance: große Responses paginieren/filtern; Redraws minimieren.
   10) Sicherheit: Keine geheimen Keys im Frontend; nur öffentliche Endpunkte nutzen.
    ============================================================================ */
-/*
+
 document.addEventListener("DOMContentLoaded", () => {
+
+  const waves = document.querySelectorAll('.welle');
+  const infoBox = document.getElementById('infoBox');
+
+  waves.forEach(wave => {
+    wave.addEventListener('click', (event) => {
+      event.stopPropagation(); // verhindert, dass das Dokument den Klick abfängt
+
+      // Position der Info-Box (immer fix links am Bildschirm)
+      infoBox.style.position = 'fixed';
+      infoBox.style.left = '250px'; // Abstand vom linken Bildschirmrand
+      infoBox.style.top = '420px';   // mittig im Bildschirm
+      infoBox.style.transform = 'translateY(-50%)';
+
+      // Inhalt der Box (später dynamisch befüllbar)
+      infoBox.innerHTML = `
+        <div class="box-content">
+            <div class="info-text">
+            <h3>${wave.dataset.info}</h3>
+          <img src="designs/boards/girl_beginnerboard.png" alt="Surfergirl" class="info-image" >
+          </div>
+        </div>
+      `;
+
+      // Box sichtbar machen
+      infoBox.classList.remove('hidden');
+      infoBox.classList.add('visible');
+    });
+  });
+
+  // Klick außerhalb der Wellen → Info-Box schließen
+  document.addEventListener('click', (e) => {
+    if (!e.target.classList.contains('welle')) {
+      infoBox.classList.add('hidden');
+      infoBox.classList.remove('visible');
+    }
+  });
+
+  //API und Chart
+
   const apiUrl = "https://im3.aare-jetzt.ch/unload.php"; // Passen Sie die URL bei Bedarf an
 
   fetch(apiUrl)
@@ -67,46 +107,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     return color; // Erzeugt eine zufällige Farbe
   }
-}); */
-
-
-document.addEventListener('DOMContentLoaded', () => {
-  const waves = document.querySelectorAll('.welle');
-  const infoBox = document.getElementById('infoBox');
-
-  waves.forEach(wave => {
-    wave.addEventListener('click', (event) => {
-      event.stopPropagation(); // verhindert, dass das Dokument den Klick abfängt
-
-      // Position der Info-Box (immer fix links am Bildschirm)
-      infoBox.style.position = 'fixed';
-      infoBox.style.left = '250px'; // Abstand vom linken Bildschirmrand
-      infoBox.style.top = '420px';   // mittig im Bildschirm
-      infoBox.style.transform = 'translateY(-50%)';
-
-      // Inhalt der Box (später dynamisch befüllbar)
-      infoBox.innerHTML = `
-        <div class="box-content">
-            <div class="info-text">
-            <h3>${wave.dataset.info}</h3>
-          <img src="designs/boards/girl_beginnerboard.png" alt="Surfergirl" class="info-image" >
-          </div>
-        </div>
-      `;
-
-      // Box sichtbar machen
-      infoBox.classList.remove('hidden');
-      infoBox.classList.add('visible');
-    });
-  });
-
-  // Klick außerhalb der Wellen → Info-Box schließen
-  document.addEventListener('click', (e) => {
-    if (!e.target.classList.contains('welle')) {
-      infoBox.classList.add('hidden');
-      infoBox.classList.remove('visible');
-    }
-  });
 });
-
 
