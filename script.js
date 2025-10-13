@@ -60,6 +60,18 @@ document.addEventListener("DOMContentLoaded", () => {
   .then(data => {
     console.log("Abgerufene Daten:", data);
 
+    if (!Array.isArray(data)) {
+      console.error("❌ Erwartetes Array, aber erhalten:", typeof data, data);
+      return;
+    }
+    
+    if (data.length === 0) {
+      console.warn("⚠️ Keine Daten erhalten vom Backend.");
+      return;
+    }
+    
+    console.log("Beispiel eines Datensatzes:", data[0]);
+
     // 1️⃣ Group data by buoy name
     const grouped = data.reduce((acc, entry) => {
       const name = entry.name;
