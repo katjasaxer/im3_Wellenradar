@@ -31,7 +31,6 @@
     flex-direction: column; /* Inhalte untereinander anordnen */
     align-items: center;    /* horizontal zentrieren */
     justify-content: center;  /* horizontal zentrieren */
-    overflow: hidden; /*scrollen verhindern */
   }
 
   .titel {
@@ -186,7 +185,7 @@
   margin: 0, auto;
 }
 .wellenChart {
-  max-height: 50px;
+  max-height: 10px;
 }
 
 
