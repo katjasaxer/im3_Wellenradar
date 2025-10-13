@@ -17,13 +17,19 @@
         infoBox.style.left = '250px';
         infoBox.style.top = '420px';
         infoBox.style.transform = 'translateY(-50%)';
+
+     // Bild je nach swht auswählen
+      const swell = parseFloat(wave.dataset.swht || 0);
+      const boardImg = swell > 1.5 
+       ? "designs/boards/girl_advancedboard.png" 
+       : "designs/boards/girl_beginnerboard.png";
   
         infoBoxContent.innerHTML = `
           <div class="box-content">
             <div class="info-text">
-              <h3>${wave.dataset.info}</h3>
-              <img src="designs/boards/girl_beginnerboard.png" 
-                   alt="Surfergirl" class="info-image">
+              <p>${wave.dataset.info}</p>
+             <img src="${boardImg}"                   
+              alt="Surfergirl" class="info-image">
             </div>
             
           </div>
@@ -111,7 +117,30 @@
             },
           },
         });
-      })
+     // })//
+
+      // --- Wellen-Icons automatisch setzen ---
+      const waves = document.querySelectorAll('.welle');
+
+      waves.forEach((wave, index) => {
+        // Wir nehmen swht aus den Daten, falls index passt
+        const swell = parseFloat(data[index]?.swht || 0);
+
+        wave.dataset.swht = swell; // setzen für InfoBox-Event
+        wave.src = swell > 1.5
+          ? "designs/wellen/welle_gross.png" 
+          : "designs/wellen/welle_klein.png";
+
+        // Klick-Event für InfoBox
+        wave.addEventListener('click', (event) => {
+          event.stopPropagation();
+          openInfoBox(wave);
+        });
+      });
+
+    })
+
+
       .catch(error => console.error("Fetch-Fehler:", error));
   
     /* --- Hilfsfunktionen --- */

@@ -53,6 +53,13 @@
     color: var(--dunkelblau);
   }
 
+  .h3 {
+        font-family: 'mighty-souly'; /* Beispiel-Schrift für Wellenradar */
+    font-size: 20px;                        
+    color: var(--dunkelblau);
+  }
+
+
   .inhalt {
     width: 100%;
     display: flex;
@@ -132,7 +139,8 @@
   background: white;
   border-radius: 10px;
   padding: 10px 15px;
-  font-family: 'mina-regular', sans-serif;
+  font-family: 'mighty-souly';
+  font-size: 30px;
   opacity: 0;
   transform: scale(0.9);
   transition: opacity 0.3s ease, transform 0.3s ease;
@@ -159,9 +167,9 @@
 }
 
 /* Titel */
-.info-text h3 {
+.info-text {
   margin: 0;
-  font-size: 18px;
+  font-size: 30px;
   color: var(--dunkelblau);
   font-weight: 600;
 }
