@@ -49,7 +49,7 @@
       });
     });
   
-    // Klick außerhalb → Info-Box schließen + Chart löschen
+    // Klick ausserhalb → Info-Box schließen + Chart löschen
     document.addEventListener('click', (e) => {
       if (!infoBox.contains(e.target)) {
         infoBox.classList.add('hidden');
@@ -60,7 +60,14 @@
         }
       }
     });
-  
+    
+    document.getElementById('closeInfoBox').addEventListener('click', () => {
+    const infoBox = document.querySelector('.info-box');
+    infoBox.classList.remove('visible');
+    infoBox.classList.add('hidden');
+    });
+
+
     /* --- API-Daten laden --- */
     const apiUrl = "https://im3.aare-jetzt.ch/unload.php";
   
