@@ -185,7 +185,8 @@
   height: 150px;
   border-radius: 8px;
   display: block;
-  margin: 0, auto;
+  margin-top: -25px;
+
 }
 #wellenChart {
   max-height: 400px;
