@@ -78,7 +78,7 @@
    margin-right: 180px;
 
   }
-  .insel .hidden {
+  .insel.hidden {
     display: none;
   }
 
@@ -150,8 +150,8 @@
   position: absolute;
   width: 370px;
   min-height: 450px;
-  height: 50vh;
   max-height: 500px;
+  height: 100%;
   background: white;
   border-radius: 10px;
   padding: 10px 15px;
@@ -185,6 +185,11 @@
   flex-direction: column; /* untereinander */
   align-items: center;     /* horizontal zentriert */
   gap: 10px;
+  height: 100%;
+}
+
+#infoBoxContent {
+  height: 100%;
 }
 
 /* Titel */
@@ -207,9 +212,9 @@
   display: block;
 }
 
-#wellenChart {
-  max-height: 400px;
-  height: 15vh;
+.chartContainer {
+  height: 50%;
+  width: 100%;
 }
 
 
@@ -265,6 +270,10 @@
           width: 120px;
           height: auto;
           margin:  0 auto 20px auto; /* oben keine, unten Abstand */
+          }
+
+          .insel.hidden {
+            display: none;
           }
 
           .map {
@@ -339,7 +348,6 @@
             transform: translate(-50%, -50%);
             width: 90%;
             max-width: 360px;
-            max-height: 60vh; /* kürzer */
             overflow-y: auto;
             background: #fff;
             border-radius: 12px;
@@ -403,9 +411,5 @@
               transition: background 0.3s ease, transform 0.2s ease;
             }
 
-            .info-box .back-button:hover {
-              background-color: #b9e367; /* etwas dunkler bei Hover */
-              transform: scale(1.05); /* leichtes Vergrößern beim Hover */
-            }
          
         }

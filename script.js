@@ -18,9 +18,6 @@
       wave.addEventListener('click', (event) => {
         event.stopPropagation();
         
-        inselBox.classList.add('hidden');
-        inselBox.classList.remove('visible');
-
         infoBox.style.position = 'fixed';
         infoBox.style.left = '15%';
         infoBox.style.top = '60%';
@@ -38,12 +35,18 @@
               <p>${wave.dataset.info}</p>
               <img src="${boardImg}" alt="Surfergirl" class="info-image">
             </div>
-            <canvas id="wellenChart" width="600" height="300" max-height="100px"></canvas>
+            <div class="chartContainer">
+              <canvas id="wellenChart"></canvas>
+            </div>
           </div>
         `;
   
         infoBox.classList.remove('hidden');
         infoBox.classList.add('visible');
+
+        inselBox.classList.remove('visible');
+        inselBox.classList.add('hidden');
+        
   
         // 🔹 Wenn Daten schon geladen sind, Chart zeichnen
         const stationName = wave.dataset.info;
@@ -60,17 +63,22 @@
         infoBox.classList.remove('visible');
         inselBox.classList.add('visible');
         inselBox.classList.remove('hidden');
+        
         if (chartInstance) {
           chartInstance.destroy();
           chartInstance = null;
         }
       }
+
+      
     });
     
     document.getElementById('closeInfoBox').addEventListener('click', () => {
     const infoBox = document.querySelector('.info-box');
     infoBox.classList.remove('visible');
     infoBox.classList.add('hidden');
+    inselBox.classList.add('visible');
+    inselBox.classList.remove('hidden');
     });
 
 
@@ -155,7 +163,7 @@
         data: { labels, datasets: [dataset] },
         options: {
           responsive: true,
-          maintainAspectRatio: true,
+          maintainAspectRatio: false,
           scales: {
             y: {
               // <-- Hier legen wir feste Grenzen fest
