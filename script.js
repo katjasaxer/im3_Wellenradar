@@ -24,7 +24,7 @@
   
         // Bild je nach swht auswählen
         const swell = parseFloat(wave.dataset.swht || 0);
-        const boardImg = swell > 1.5
+        const boardImg = swell > 4
           ? "designs/girl_advancedboard.png"
           : "designs/girl_beginnerboard.png";
   
@@ -51,7 +51,7 @@
   
     // Klick außerhalb → Info-Box schließen + Chart löschen
     document.addEventListener('click', (e) => {
-      if (!e.target.classList.contains('welle')) {
+      if (!infoBox.contains(e.target)) {
         infoBox.classList.add('hidden');
         infoBox.classList.remove('visible');
         if (chartInstance) {
@@ -67,7 +67,7 @@
     fetch(apiUrl)
       .then(response => response.json())
       .then(data => {
-        console.log("Abgerufene Daten:", data);
+        //console.log("Abgerufene Daten:", data);
   
         if (!Array.isArray(data) || data.length === 0) {
           console.warn("⚠️ Keine gültigen Daten erhalten – Diagramm wird nicht erstellt.");
@@ -82,17 +82,18 @@
           return acc;
         }, {});
   
-        console.log("Gruppierte Daten:", groupedData);
+        // console.log("Gruppierte Daten:", groupedData);
   
         // Setze Wellen-Icons anhand der Daten
         const waveNames = Object.keys(groupedData);
         waves.forEach((wave, i) => {
           const stationName = wave.dataset.info;
-          const latest = groupedData[stationName]?.[0];
+          const allData = groupedData[stationName] || [];
+          const latest = allData[allData.length - 1];
           const swell = parseFloat(latest?.swht || 0);
   
           wave.dataset.swht = swell;
-          wave.src = swell > 1.5
+          wave.src = swell > 4
             ? "designs/wellen/welle_gross.png"
             : "designs/wellen/welle_klein.png";
         });
@@ -135,7 +136,7 @@
         data: { labels, datasets: [dataset] },
         options: {
           responsive: true,
-          maintainAspectRatio: false,
+          maintainAspectRatio: true,
           scales: {
             y: {
               beginAtZero: false,

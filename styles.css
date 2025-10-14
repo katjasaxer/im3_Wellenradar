@@ -135,8 +135,9 @@
 .info-box {
   position: absolute;
   width: 370px;
-  height: 400px;
-  max-height: 400px;
+  min-height: 450px;
+  height: 50vh;
+  max-height: 500px;
   background: white;
   border-radius: 10px;
   padding: 10px 15px;
@@ -188,6 +189,7 @@
 }
 #wellenChart {
   max-height: 400px;
+  height: 15vh;
 }
 
 
@@ -331,8 +333,8 @@
 
           /* ✅ Chart kleiner & responsiv */
           #wellenChart {
-            width: 100% !important;
-            height: auto !important;
+            width: 100%;
+            height: auto;
             max-height: 220px;
           }
 
