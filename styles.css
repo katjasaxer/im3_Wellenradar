@@ -249,18 +249,18 @@
           margin-top: 0;
   }
           
-           .insel {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 120px;
-            height: auto;
-            margin: 20px 0 0 0;
+          .insel {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 120px;
+          height: auto;
+          margin: 20px 0 0 0;
           }
 
-            .map {
-             position: relative;
+          .map {
+            position: relative;
             width: 100%;
             max-width: 600px;
             margin-top: 20px;
