@@ -123,7 +123,9 @@
         label: `${name} – Wellenhöhe`,
         data: data.map(item => item.swht ?? 0),
         fill: false,
-        borderColor: getRandomColor(),
+        borderColor: #4E99D1,
+        backgroundColor: #fffff,
+        pointBorderColor: #002263,
         tension: 0.1,
       };
   
