@@ -8,6 +8,7 @@
     const waves = document.querySelectorAll('.welle');
     const infoBox = document.getElementById('infoBox');
     const infoBoxContent = document.getElementById('infoBoxContent');
+    const inselBox = document.getElementById('insel');
   
     let chartInstance = null; // Referenz auf das aktuelle Chart
     let groupedData = {};     // globale Datenspeicherung für spätere Klicks
@@ -16,7 +17,10 @@
     waves.forEach(wave => {
       wave.addEventListener('click', (event) => {
         event.stopPropagation();
-  
+        
+        inselBox.classList.add('hidden');
+        inselBox.classList.remove('visible');
+
         infoBox.style.position = 'fixed';
         infoBox.style.left = '15%';
         infoBox.style.top = '60%';
@@ -54,6 +58,8 @@
       if (!infoBox.contains(e.target)) {
         infoBox.classList.add('hidden');
         infoBox.classList.remove('visible');
+        inselBox.classList.add('visible');
+        inselBox.classList.remove('hidden');
         if (chartInstance) {
           chartInstance.destroy();
           chartInstance = null;
