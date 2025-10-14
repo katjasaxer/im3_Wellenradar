@@ -383,12 +383,12 @@
             .info-box .back-button {
               display: block;
               margin: 15px auto 0 auto; /* mittig */
-              background-color: #cdea8f; /* hellgrün wie im Bild */
+              background-color: #cdea8f; 
               color: white;
               border: none;
-              border-radius: 50px; /* stark abgerundet */
-              padding: 12px 40px; /* ausreichend groß für Text */
-              font-family: 'mighty-souly', sans-serif; /* Schrift anpassen falls nötig */
+              border-radius: 50px; 
+              padding: 12px 40px; 
+              font-family: 'mighty-souly';
               font-size: 22px;
               cursor: pointer;
               text-align: center;
