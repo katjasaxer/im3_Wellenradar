@@ -146,7 +146,7 @@
           scales: {
             y: {
               beginAtZero: false,
-              title: { display: true, text: "Wellenhöhe (m)" },
+              title: { display: true, text: "Wellenhöhe (feet)" },
             },
             x: {
               title: { display: true, text: "Zeit" },
