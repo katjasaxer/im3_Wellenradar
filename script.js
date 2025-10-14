@@ -24,7 +24,7 @@
   
         // Bild je nach swht auswählen
         const swell = parseFloat(wave.dataset.swht || 0);
-        const boardImg = swell > 4
+        const boardImg = swell > 3.5
           ? "designs/girl_advancedboard.png"
           : "designs/girl_beginnerboard.png";
   
@@ -93,7 +93,7 @@
           const swell = parseFloat(latest?.swht || 0);
   
           wave.dataset.swht = swell;
-          wave.src = swell > 4
+          wave.src = swell > 3.5
             ? "designs/wellen/welle_gross.png"
             : "designs/wellen/welle_klein.png";
         });
