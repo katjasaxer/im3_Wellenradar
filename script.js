@@ -26,7 +26,7 @@
         const swell = parseFloat(wave.dataset.swht || 0);
         const boardImg = swell > 3.5
           ? "designs/girl_advancedboard2.png"
-          : "design/girl_beginnerboard2.png"; 
+          : "designs/girl_beginnerboard2.png"; 
   
         infoBoxContent.innerHTML = `
           <div class="box-content">

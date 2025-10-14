@@ -182,12 +182,12 @@
 
 /* Bild */
 .info-image {
+  margin-top: -25px;
   height: 150px;
   border-radius: 8px;
   display: block;
-  margin-top: -25px;
-
 }
+
 #wellenChart {
   max-height: 400px;
   height: 15vh;
