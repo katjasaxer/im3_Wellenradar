@@ -149,7 +149,7 @@
               title: { display: true, text: "Wellenhöhe (ft)" },
             },
             x: {
-              title: { display: true, text: "Zeit" },
+              title: { display: true, text: "Zeit (heute)" },
             },
           },
           plugins: {
