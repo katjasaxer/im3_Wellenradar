@@ -105,16 +105,22 @@
     function drawChartFor(name) {
       const canvas = document.getElementById("wellenChart");
       if (!canvas) {
-        console.error("❌ Kein Canvas gefunden.");
+        console.error("Kein Canvas gefunden.");
         return;
       }
       const ctx = canvas.getContext("2d");
   
-      const data = groupedData[name];
-      if (!data) {
-        console.warn(`⚠️ Keine Daten für ${name}`);
-        return;
-      }
+     // Zeitgrenze: 24 Stunden zurück
+     const now = Date.now();
+     const vor24h = now - 24 * 60 * 60 * 1000;
+
+    // Daten für diesen Namen filtern
+     const data = groupedData[name]?.filter(item => new Date(item.time).getTime() >= vor24h);
+
+     if (!data || data.length === 0) {
+     console.warn(`Keine Daten innerhalb der letzten 24 Stunden für ${name}`);
+     return;
+     }
   
       const labels = data.map(item =>
         new Date(item.time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })

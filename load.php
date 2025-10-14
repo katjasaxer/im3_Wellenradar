@@ -30,11 +30,22 @@ try {
         ]);
     }
 
-    echo "Daten erfolgreich eingefügt.";
+    //letze 24 Stunden filtern
+    $jetzt = time();
+    $vor24Stunden = $jetzt - 24*60*60;
+    $letzte24hDaten = [];
+
+    foreach ($dataArray as $item) {
+        // 'time' Feld aus transform.php nutzen
+        $itemZeit = strtotime($item['time']);
+        if ($itemZeit >= $vor24Stunden) {
+            $letzte24hDaten[] = $item;
+        }
+    }
+
+
 } catch (PDOException $e) {
     die("Verbindung zur Datenbank konnte nicht hergestellt werden: " . $e->getMessage());
 }
-
-
 
 ?>
