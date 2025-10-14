@@ -136,6 +136,7 @@
   position: absolute;
   width: 370px;
   height: 400px;
+  max-height: 400px;
   background: white;
   border-radius: 10px;
   padding: 10px 15px;
