@@ -163,7 +163,6 @@
   flex-direction: column; /* untereinander */
   align-items: center;     /* horizontal zentriert */
   gap: 10px;
-  max-height: 100px;
 }
 
 /* Titel */
@@ -186,7 +185,7 @@
   margin: 0, auto;
 }
 .wellenChart {
-  max-height: 10px;
+  max-height: 80px;
 }
 
 
