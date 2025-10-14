@@ -68,6 +68,17 @@
     margin-top: -40px;
   }
   
+  .insel {
+  position: relative;
+  display: flex;
+  justify-content: left;
+   height: 380px;
+   width: 250px;
+   margin-top: 40px;
+   margin-right: 180px;
+
+  }
+
   .map {
     position: relative; /* macht das Bild zum Bezugspunkt für absolute Positionierung */
     width: 100%;
@@ -236,6 +247,16 @@
             margin-top: -40px;
           }
           
+           .insel {
+            position:relative;
+            display: flex;
+            justify-content: top;
+            height: 100px;
+            width: 70px;
+            margin-top: 20px;
+            margin-right: 40px;
+
+  }
           .map {
             position: relative; /* macht das Bild zum Bezugspunkt für absolute Positionierung */
             width: 100%;
