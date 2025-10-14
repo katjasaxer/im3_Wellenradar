@@ -34,7 +34,7 @@
               <p>${wave.dataset.info}</p>
               <img src="${boardImg}" alt="Surfergirl" class="info-image">
             </div>
-            <canvas id="wellenChart" width="600" height="300"></canvas>
+            <canvas id="wellenChart" width="600" height="300" max-height="400px"></canvas>
           </div>
         `;
   
