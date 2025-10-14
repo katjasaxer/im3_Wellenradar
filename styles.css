@@ -78,6 +78,9 @@
    margin-right: 180px;
 
   }
+  .insel .hidden {
+    display: none;
+  }
 
   .map {
     position: relative; /* macht das Bild zum Bezugspunkt für absolute Positionierung */
