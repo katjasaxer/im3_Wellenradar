@@ -171,6 +171,11 @@
   pointer-events: none;
 } 
 
+.info-box .back-button {
+ display: none; /* auf Desktop unsichtbar */
+ }
+
+
 /* ----- Inhalt: Titel über Bild, alles zentriert ----- */
 .box-content {
   display: flex;
@@ -206,7 +211,7 @@
 
 
 
-        @media (max-width: 1024px) { /*wenn grösser als mobile-Layout, dann wechselt es auf Desktop (tablet-layout wird übersprungen)*/
+        @media (max-width: 1023px) { /*wenn grösser als mobile-Layout, dann wechselt es auf Desktop (tablet-layout wird übersprungen)*/
           body {
             background-color: var(--hintergrund);
             margin: 0;
