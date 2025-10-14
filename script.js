@@ -34,7 +34,7 @@
               <p>${wave.dataset.info}</p>
               <img src="${boardImg}" alt="Surfergirl" class="info-image">
             </div>
-            <canvas id="wellenChart" width="600" height="300" max-height="400px"></canvas>
+            <canvas id="wellenChart" width="600" height="300" max-height="100px"></canvas>
           </div>
         `;
   
@@ -123,9 +123,7 @@
         label: `${name} – Wellenhöhe`,
         data: data.map(item => item.swht ?? 0),
         fill: false,
-        borderColor: #4E99D1,
-        backgroundColor: #fffff,
-        pointBorderColor: #002263,
+        borderColor: '#4E99D1',
         tension: 0.1,
       };
   
