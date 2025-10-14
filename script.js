@@ -170,7 +170,7 @@
               min: 0,           // Unterste Grenze
               max: 12,          // Oberste Grenze
               ticks: {
-                stepSize: 2,    // Schritte: 0, 2, 4, 6, 8, 10, 12
+                stepSize: 2,    
               },
               title: { display: true, text: "Wellenhöhe (ft)" },
             },

@@ -268,9 +268,10 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          width: 120px;
+          width: 130px;
           height: auto;
-          margin:  0 auto 20px auto; /* oben keine, unten Abstand */
+          margin-top: -8px;
+          margin-bottom: -5px;
           }
 
           .insel.hidden {
@@ -362,7 +363,8 @@
             flex-direction: column;
             align-items: center;
             margin-left: -50px;
-            margin-right: 100px;
+            margin-right: 50px;
+            
           }
           
             /* Kleine Animation/Feedback beim Öffnen */
@@ -406,7 +408,7 @@
               color: white;
               border: none;
               border-radius: 30px; 
-              padding: 12px 30px; 
+              padding: 6px 20px; 
               font-family: 'mighty-souly';
               font-size: 22px;
               cursor: pointer;
