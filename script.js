@@ -6,6 +6,8 @@
     const infoBox = document.getElementById('infoBox');
     const infoBoxContent = document.getElementById('infoBoxContent');
     const inselBox = document.getElementById('insel');
+    const advancedboard = document.getElementById('advanced');
+    const beginnerboard = document.getElementById('beginner');
   
     let chartInstance = null; // Referenz auf das aktuelle Chart
     let groupedData = {};     // globale Datenspeicherung für spätere Klicks
@@ -20,8 +22,9 @@
         infoBox.style.top = '60%';
         infoBox.style.transform = 'translateY(-50%)';
   
-        // Bild je nach swht auswählen
+        // Bild je nach swht&swd auswählen
         const swell = parseFloat(wave.dataset.swht || 0);
+        const windImg = `designs/pfeile/new/${wave.dataset.swd}.png`
         const boardImg = swell > 5.0
           ? "designs/girl_advancedboard2.png"
           : "designs/girl_beginnerboard2.png"; 
@@ -31,6 +34,7 @@
             <div class="info-text">
               <p>${wave.dataset.info}</p>
               <img src="${boardImg}" alt="Surfergirl" class="info-image">
+              <img src="${windImg}" class="info-image">
             </div>
             <div class="chartContainer">
               <canvas id="wellenChart"></canvas>
@@ -100,7 +104,7 @@
           return acc;
         }, {});
   
-        // console.log("Gruppierte Daten:", groupedData);
+        console.log("Gruppierte Daten:", groupedData);
   
         // Setze Wellen-Icons anhand der Daten
         const waveNames = Object.keys(groupedData);
@@ -109,8 +113,13 @@
           const allData = groupedData[stationName] || [];
           const latest = allData[allData.length - 1];
           const swell = parseFloat(latest?.swht || 0);
+          const swd = latest.swd;
   
+          console.log(stationName);
+          console.log(swd);
+
           wave.dataset.swht = swell;
+          wave.dataset.swd = swd;
           wave.src = swell > 5.0
             ? "designs/wellen/welle_gross.png"
             : "designs/wellen/welle_klein.png";
@@ -154,7 +163,16 @@
   
       // Wenn bereits ein Chart existiert, zerstören
       if (chartInstance) chartInstance.destroy();
+
+      //Dynamische Charthöhe
+      maxWaveHight = 2 * Math.round(Math.max(...dataset.data) / 2);
   
+      if (maxWaveHight <= 8) {
+        maxChartHight = 10;
+      } else {
+        maxChartHight = maxWaveHight + 2;
+      }
+
       chartInstance = new Chart(ctx, {
         type: "line",
         data: { labels, datasets: [dataset] },
@@ -165,7 +183,8 @@
             y: {
               // <-- Hier legen wir feste Grenzen fest
               min: 0,           // Unterste Grenze
-              max: 12,          // Oberste Grenze
+              max: 16,          // Oberste Grenze
+              //max: maxChartHight; Dynamische Chart Höhe
               ticks: {
                 stepSize: 2,    
               },
@@ -191,5 +210,65 @@
       }
       return color;
     }
+
+    /* --- Infoboxen Boards - Advanced --- */
+    advancedboard.addEventListener('click', (event) => {
+      event.stopPropagation();
+        
+        infoBox.style.position = 'fixed';
+        infoBox.style.left = '15%';
+        infoBox.style.top = '60%';
+        infoBox.style.transform = 'translateY(-50%)';
+  
+  
+        infoBoxContent.innerHTML = `
+          <div class="box-content">
+            <div class="info-text">
+              <p>test</p>
+              <img src="designs/girl_advancedboard2.png" alt="Surfergirl" class="info-image">
+            </div>
+            <div class="chartContainer">
+              <canvas id="wellenChart"></canvas>
+            </div>
+          </div>
+        `;
+  
+        infoBox.classList.remove('hidden');
+        infoBox.classList.add('visible');
+
+        inselBox.classList.remove('visible');
+        inselBox.classList.add('hidden');
+    });
+  
+    /* --- Infoboxen Boards - Advanced --- */
+    beginnerboard.addEventListener('click', (event) => {
+      event.stopPropagation();
+        
+        infoBox.style.position = 'fixed';
+        infoBox.style.left = '15%';
+        infoBox.style.top = '60%';
+        infoBox.style.transform = 'translateY(-50%)';
+  
+  
+        infoBoxContent.innerHTML = `
+          <div class="box-content">
+            <div class="info-text">
+              <p>test</p>
+              <img src="designs/girl_beginnerboard2.png" alt="Surfergirl" class="info-image">
+            </div>
+            <div class="chartContainer">
+              <canvas id="wellenChart"></canvas>
+            </div>
+          </div>
+        `;
+  
+        infoBox.classList.remove('hidden');
+        infoBox.classList.add('visible');
+
+        inselBox.classList.remove('visible');
+        inselBox.classList.add('hidden');
+    });
+
   });
   
+
