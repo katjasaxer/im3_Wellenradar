@@ -96,8 +96,9 @@
     position: absolute;
     height: 210px;
     width: auto;
-    margin-top: 113px;
-    margin-right: 870px;
+    margin-top: 89px;
+    margin-right: 864px;
+    transform: rotate(2.5deg);
   }
 
   .map {
@@ -166,7 +167,7 @@
 /* Info-Box */
 .info-box {
   position: absolute;
-  width: 370px;
+  width: 400px;
   min-height: 450px;
   max-height: 500px;
   height: 100%;
@@ -232,10 +233,9 @@
 }
 .wind-image {
   margin-top: -25px;
-  height: 75px;
+  height: 150px;
   width: auto;
   display: block;
-  margin-top: 25px;
 }
 
 .bildpfeil{
