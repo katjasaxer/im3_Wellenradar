@@ -91,14 +91,33 @@
     margin-right: 937px;
     transform: rotate(2deg);
   }
+  .advanced.cta {
+    transition: ease-in 0.5 s; /* Weicher Übergang beim Hover */
+  }
+
+  .advanced.cta:hover {
+      width: auto;
+      height: 298px;
+      margin-top:106px;
+  }
 
   .beginner {
     position: absolute;
     height: 210px;
     width: auto;
-    margin-top: 89px;
-    margin-right: 864px;
-    transform: rotate(2.5deg);
+    margin-top: 180px;
+    margin-right: 767px;
+    transform: rotate(5deg);
+  }
+
+  .beginner.cta {
+    transition: ease-in 0.5 s; /* Weicher Übergang beim Hover */
+  }
+
+  .beginner.cta:hover {
+      width: auto;
+      height: 218px;
+      margin-top:87px;
   }
 
   .map {
@@ -308,24 +327,55 @@ gap:20px;
           align-items: center;
           justify-content: center;
           margin-top: 0;
-  }
+        }
           
           .insel {
           position: relative;
-          display: flex;
+          display: block;
           justify-content: center;
           align-items: center;
-          width: 100px;
+          width: 175px;
           height: auto;
           margin-top: -8px;
           margin-bottom: -5px;
           }
-
+ 
           .insel.hidden {
             display: none;
           }
 
-
+          .advanced {
+            position: absolute;
+            height: 175px;
+            width: auto;
+            margin-top: -116.7px;
+            margin-right: 40px;
+            transform: rotate(1deg);
+          }
+          .advanced.cta {
+            transition: ease-in 0.5 s; /* Weicher Übergang beim Hover */
+          }
+        
+          .advanced.cta:hover {
+              width: auto;
+              height: 178px;
+          }
+        
+          .beginner {
+            position: absolute;
+            height: 120px;
+            width: auto;
+            margin-top: -148px;
+            margin-right: -40px;
+            transform: rotate(2.6deg);
+          }
+          .beginner.cta {
+            transition: ease-in 0.5 s; /* Weicher Übergang beim Hover */
+          }
+          .beginner.cta:hover {
+              width: auto;
+              height: 123px;
+          }
           .map {
             position: relative;
             width: 90%;
@@ -336,11 +386,12 @@ gap:20px;
             }
           
           .map img.background-image {
-            width: 100%;
+            width: 450px;
             height: auto;
             display: block;
             position: relative;
             z-index: 1; /* Bild bleibt unten */
+            margin-left: 85px;
           }
           
           /* Icons */
@@ -348,7 +399,8 @@ gap:20px;
             position: absolute;
             width: 8%; /* skalierbar mit dem Bild */
             z-index: 2; /* Icons über dem Bild */
-            cursor: pointer;        
+            cursor: pointer;    
+            margin-left: 85px;
           }
         
           /* Positionen relativ zum Bild (anpassen nach Bedarf) */
@@ -357,29 +409,35 @@ gap:20px;
             left: 13%; 
             width: 40px;
             height: 40px;
+            margin-left: 40px;
           }
           .welle_2 {
             top: 49%;
             left: 25%; 
             width: 40px;
-            height: 40px; }
+            height: 40px;
+            margin-left: 40px;
+          }
           .welle_3 { 
             top: 60%;
             left: 30%; 
             width: 40px;
             height: 40px;
+            margin-left: 50px;
           }
           .welle_4 { 
             top: 77%;
             left: 48%; 
             width: 40px;
             height: 40px;
+            margin-left: 50px;
           }
           .welle_5 { 
             top: 83%;
             left: 60%; 
             width: 40px;
             height: 40px;
+            margin-left: 50px;
           }
           .welle.cta {
             transition: ease-in 0.5 s; /* Weicher Übergang beim Hover */

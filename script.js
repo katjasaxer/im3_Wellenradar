@@ -255,7 +255,7 @@
             <div class="info-inhalt">
               <h1>Beginner</h1>
               <img src="designs/girl_beginnerboard3.png" alt="Surfergirl mit Beginnerboard" class="info-image">
-              <p>Sanfte Wellen zwischen 0-5 ft (0–1.5 m), die perfekt für Einsteiger:innen sind.
+              <p>Sanfte Wellen bis 5 ft (bis 1.5 m), die perfekt für Einsteiger:innen sind.
               Hier kannst du sicher üben, erste Take-offs meistern und Schritt für Schritt ins Surfen eintauchen.</p>
             </div>
           </div> `;
