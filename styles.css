@@ -70,16 +70,33 @@
   
   .insel {
   position: relative;
-  display: flex;
+  display: block;
   justify-content: left;
    height: 380px;
    width: 250px;
    margin-top: 40px;
    margin-right: 180px;
+   /*z-index: 2;*/
 
   }
   .insel.hidden {
     display: none;
+  }
+  
+  .advanced {
+    position: absolute;
+    height: 290px;
+    width: auto;
+    margin-top: 113px;
+    margin-right: 937px;
+  }
+
+  .beginner {
+    position: absolute;
+    height: 210px;
+    width: auto;
+    margin-top: 113px;
+    margin-right: 870px;
   }
 
   .map {
@@ -268,7 +285,7 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          width: 130px;
+          width: 100px;
           height: auto;
           margin-top: -8px;
           margin-bottom: -5px;
@@ -277,6 +294,7 @@
           .insel.hidden {
             display: none;
           }
+
 
           .map {
             position: relative;
