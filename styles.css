@@ -73,7 +73,7 @@
   display: block;
   justify-content: left;
    height: 380px;
-   width: 250px;
+   width: 260px;
    margin-top: 40px;
    margin-right: 180px;
    /*z-index: 2;*/
@@ -222,19 +222,44 @@
   justify-content: center;
 }
 
-/* Bild */
+/* Bild Surfergirl & Pfeil Windrichtung*/
 .info-image {
   margin-top: -25px;
   height: 150px;
   border-radius: 8px;
   display: block;
 }
+.wind-image {
+  margin-top: -25px;
+  height: 75px;
+  width: auto;
+  display: block;
+  margin-top: 25px;
+}
 
+.bildpfeil{
+display:flex;
+flex-direction: row;
+gap:20px;
+
+}
 .chartContainer {
   height: 50%;
   width: 100%;
 }
 
+.info-inhalt {
+  display: flex;
+  flex-direction: column; /* untereinander */
+  font-size: 20px;
+  font-family:mina-regular;
+  color: var(--dunkelblau);
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 
 
         @media (max-width: 1023px) { /*wenn grösser als mobile-Layout, dann wechselt es auf Desktop (tablet-layout wird übersprungen)*/

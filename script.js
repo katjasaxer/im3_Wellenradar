@@ -33,8 +33,9 @@
           <div class="box-content">
             <div class="info-text">
               <p>${wave.dataset.info}</p>
+              <div class="bildpfeil">
               <img src="${boardImg}" alt="Surfergirl" class="info-image">
-              <img src="${windImg}" class="info-image">
+              <img src="${windImg}" class="wind-image"> </div>
             </div>
             <div class="chartContainer">
               <canvas id="wellenChart"></canvas>
@@ -223,12 +224,11 @@
   
         infoBoxContent.innerHTML = `
           <div class="box-content">
-            <div class="info-text">
-              <p>test</p>
-              <img src="designs/girl_advancedboard2.png" alt="Surfergirl" class="info-image">
-            </div>
-            <div class="chartContainer">
-              <canvas id="wellenChart"></canvas>
+            <div class="info-inhalt">
+              <h1>Advanced</h1>
+              <img src="designs/girl_advancedboard3.png" alt="Surfergirl" class="info-image">
+              <p>Kräftige Wellen ab 2 m, die ideal für Fortgeschrittene und Profis sind.
+              Sie bieten mehr Power, Geschwindigkeit und Raum für anspruchsvolle Manöver.</p>
             </div>
           </div>
         `;
@@ -252,15 +252,13 @@
   
         infoBoxContent.innerHTML = `
           <div class="box-content">
-            <div class="info-text">
-              <p>test</p>
-              <img src="designs/girl_beginnerboard2.png" alt="Surfergirl" class="info-image">
+            <div class="info-inhalt">
+              <h1>Beginner</h1>
+              <img src="designs/girl_beginnerboard3.png" alt="Surfergirl" class="info-image">
+              <p>Sanfte Wellen zwischen 0–2 m, die perfekt für Einsteiger:innen sind.
+              Hier kannst du sicher üben, erste Take-offs meistern und Schritt für Schritt ins Surfen eintauchen.</p>
             </div>
-            <div class="chartContainer">
-              <canvas id="wellenChart"></canvas>
-            </div>
-          </div>
-        `;
+          </div> `;
   
         infoBox.classList.remove('hidden');
         infoBox.classList.add('visible');
