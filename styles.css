@@ -212,12 +212,15 @@
   width: 95%;
 }
 
+
+
+
 /* Titel */
 .info-text {
   display: flex;
   flex-direction: column; /* untereinander */
   margin-top: -5%;
-  font-size: 30px;
+  font-size: 35px;
   color: var(--dunkelblau);
   font-weight: 600;
   align-items: center;
@@ -252,7 +255,7 @@ gap:20px;
 .info-inhalt {
   display: flex;
   flex-direction: column; /* untereinander */
-  font-size: 20px;
+  font-size: 21px;
   font-family:mina-regular;
   color: var(--dunkelblau);
   align-items: center;
@@ -260,6 +263,7 @@ gap:20px;
   justify-content: center;
   margin-top: 5px;
   margin-bottom: 5px;
+  gap: 15px;
 }
 
 

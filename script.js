@@ -226,8 +226,8 @@
           <div class="box-content">
             <div class="info-inhalt">
               <h1>Advanced</h1>
-              <img src="designs/girl_advancedboard3.png" alt="Surfergirl" class="info-image">
-              <p>Kräftige Wellen ab 2 m, die ideal für Fortgeschrittene und Profis sind.
+              <img src="designs/girl_advancedboard3.png" alt="Surfergirl mit Advancedboard" class="info-image">
+              <p>Kräftige Wellen ab 5 ft (ab 1.5 m), die ideal für Fortgeschrittene und Profis sind.
               Sie bieten mehr Power, Geschwindigkeit und Raum für anspruchsvolle Manöver.</p>
             </div>
           </div>
@@ -240,7 +240,7 @@
         inselBox.classList.add('hidden');
     });
   
-    /* --- Infoboxen Boards - Advanced --- */
+    /* --- Infoboxen Boards - Beginner --- */
     beginnerboard.addEventListener('click', (event) => {
       event.stopPropagation();
         
@@ -254,8 +254,8 @@
           <div class="box-content">
             <div class="info-inhalt">
               <h1>Beginner</h1>
-              <img src="designs/girl_beginnerboard3.png" alt="Surfergirl" class="info-image">
-              <p>Sanfte Wellen zwischen 0–2 m, die perfekt für Einsteiger:innen sind.
+              <img src="designs/girl_beginnerboard3.png" alt="Surfergirl mit Beginnerboard" class="info-image">
+              <p>Sanfte Wellen zwischen 0-5 ft (0–1.5 m), die perfekt für Einsteiger:innen sind.
               Hier kannst du sicher üben, erste Take-offs meistern und Schritt für Schritt ins Surfen eintauchen.</p>
             </div>
           </div> `;
