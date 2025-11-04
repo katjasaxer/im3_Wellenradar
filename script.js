@@ -220,11 +220,12 @@
         infoBox.style.left = '15%';
         infoBox.style.top = '60%';
         infoBox.style.transform = 'translateY(-50%)';
+        infoBox.style.height = '300px';
   
   
         infoBoxContent.innerHTML = `
-          <div class="box-content">
-            <div class="info-inhalt">
+          <div class="box-contentboards">
+            <div class="info-inhaltboards">
               <h1>Advanced</h1>
               <img src="designs/girl_advancedboard3.png" alt="Surfergirl mit Advancedboard" class="info-image">
               <p>Kräftige Wellen ab 5 ft (ab 1.5 m), die ideal für Fortgeschrittene und Profis sind.
@@ -251,8 +252,8 @@
   
   
         infoBoxContent.innerHTML = `
-          <div class="box-content">
-            <div class="info-inhalt">
+          <div class="box-contentboards">
+            <div class="info-inhaltboards">
               <h1>Beginner</h1>
               <img src="designs/girl_beginnerboard3.png" alt="Surfergirl mit Beginnerboard" class="info-image">
               <p>Sanfte Wellen bis 5 ft (bis 1.5 m), die perfekt für Einsteiger:innen sind.

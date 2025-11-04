@@ -105,9 +105,9 @@
     position: absolute;
     height: 210px;
     width: auto;
-    margin-top: 180px;
-    margin-right: 767px;
-    transform: rotate(5deg);
+    margin-top: 90px;
+    margin-right: 850px;
+    transform: rotate(4deg);
   }
 
   .beginner.cta {
@@ -227,11 +227,8 @@
 }
 
 #infoBoxContent {
-  height: 100%;
   width: 95%;
 }
-
-
 
 
 /* Titel */
@@ -264,10 +261,9 @@
 display:flex;
 flex-direction: row;
 gap:20px;
-
 }
 .chartContainer {
-  height: 50%;
+  height: 100%;
   width: 100%;
 }
 
@@ -284,9 +280,22 @@ gap:20px;
   margin-bottom: 5px;
   gap: 15px;
 }
+.info-inhaltboards {
+  display: flex;
+  flex-direction: column; /* untereinander */
+  font-size: 21px;
+  font-family:mina-regular;
+  color: var(--dunkelblau);
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin-top: -25px;
+  margin-bottom: 5px;
+  gap: 15px;
+}
 
 
-        @media (max-width: 1023px) { /*wenn grösser als mobile-Layout, dann wechselt es auf Desktop (tablet-layout wird übersprungen)*/
+       @media (max-width: 1023px) { /*wenn grösser als mobile-Layout, dann wechselt es auf Desktop (tablet-layout wird übersprungen)*/
           body {
             background-color: var(--hintergrund);
             margin: 0;
@@ -296,7 +305,7 @@ gap:20px;
             flex-direction: column; /* Inhalte untereinander anordnen */
             align-items: center;    /* horizontal zentrieren */
             justify-content: flex-start;  /* horizontal zentrieren */
-            overflow: auto; /*Scrillen auf mobile erlauben*/
+            overflow:hidden; /*Scrillen auf mobile erlauben*/
           }
         
           .titel {
@@ -327,7 +336,7 @@ gap:20px;
           align-items: center;
           justify-content: center;
           margin-top: 0;
-        }
+          }
           
           .insel {
           position: relative;
@@ -345,11 +354,12 @@ gap:20px;
           }
 
           .advanced {
-            position: absolute;
+            position: fixed;
+            display: block;
             height: 175px;
             width: auto;
-            margin-top: -116.7px;
-            margin-right: 40px;
+            margin-top: -100px;
+            margin-right: 45px;
             transform: rotate(1deg);
           }
           .advanced.cta {
@@ -358,23 +368,23 @@ gap:20px;
         
           .advanced.cta:hover {
               width: auto;
-              height: 178px;
+              height: 180px;
           }
         
           .beginner {
-            position: absolute;
+            position: fixed;
+            display: block;
             height: 120px;
             width: auto;
-            margin-top: -148px;
+            margin-top: -131px;
             margin-right: -40px;
-            transform: rotate(2.6deg);
           }
           .beginner.cta {
             transition: ease-in 0.5 s; /* Weicher Übergang beim Hover */
           }
           .beginner.cta:hover {
               width: auto;
-              height: 123px;
+              height: 125px;
           }
           .map {
             position: relative;
@@ -386,7 +396,7 @@ gap:20px;
             }
           
           .map img.background-image {
-            width: 450px;
+            width: 400px;
             height: auto;
             display: block;
             position: relative;
@@ -406,38 +416,33 @@ gap:20px;
           /* Positionen relativ zum Bild (anpassen nach Bedarf) */
           .welle_1 { 
             top: 25%;
-            left: 13%; 
+            left: 6%; 
             width: 40px;
             height: 40px;
-            margin-left: 40px;
           }
           .welle_2 {
             top: 49%;
-            left: 25%; 
+            left: 15%; 
             width: 40px;
             height: 40px;
-            margin-left: 40px;
           }
           .welle_3 { 
             top: 60%;
-            left: 30%; 
+            left: 22%; 
             width: 40px;
             height: 40px;
-            margin-left: 50px;
           }
           .welle_4 { 
             top: 77%;
-            left: 48%; 
+            left: 39%; 
             width: 40px;
             height: 40px;
-            margin-left: 50px;
           }
           .welle_5 { 
             top: 83%;
-            left: 60%; 
+            left: 51%; 
             width: 40px;
             height: 40px;
-            margin-left: 50px;
           }
           .welle.cta {
             transition: ease-in 0.5 s; /* Weicher Übergang beim Hover */
@@ -448,7 +453,14 @@ gap:20px;
               height: 55px;
           }
 
-          /* ✅ Info-Box mobile-friendly */
+          /* Info-Box Wellen mobile-friendly */
+          .box-content {
+            display: flex;
+            flex-direction: column; /* untereinander */
+            align-items: center;     /* horizontal zentriert */
+            gap: 10px;
+            height: 100%;
+          }
           .info-box {
             position: absolute;
             top: 50%; /* mittig auf dem Bildschirm */
@@ -456,27 +468,49 @@ gap:20px;
             transform: translate(-50%, -50%);
             width: 90%;
             max-width: 360px;
-            overflow-y: auto;
+            /*overflow-y: auto;*/
             background: #fff;
             border-radius: 12px;
             padding: 15px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             font-family: 'mighty-souly';
-            font-size: 20px;
+            font-size: 18px;
             color: var(--dunkelblau);
-            z-index: 10;
+            z-index: 2;
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-left: -50px;
-            margin-right: 50px;
-            
           }
-          
+
+          /* Info-Box Boards mobile-friendly */
+          .info-inhaltboards {
+            position: absolute;
+            top: 46%; /* mittig auf dem Bildschirm */
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            font-size:18px;
+            max-width: 360px;
+            margin-top:15px;
+            /*overflow-y: auto; */
+            z-index: 2;
+          }
+
+          .box-contentboards {
+            display: flex;
+            flex-direction: column; /* untereinander */
+            align-items: center;     /* horizontal zentriert */
+            gap: 10px;
+            height: 50%;
+          }
             /* Kleine Animation/Feedback beim Öffnen */
             .info-box.visible {
               opacity: 1;
               transition: all 0.3s ease;
+              left:10%;
+              top:60%;
+              margin-top:-50px;
+              margin-left:-25px;
             }
 
             .info-box.hidden {
@@ -490,24 +524,41 @@ gap:20px;
             text-align: center;
             font-size: 30px;
             margin-bottom: 10px;
+            margin-top:-20px;
           }
 
           .info-image {
             width: auto;
-            height: 130px;
+            height: 150px;
             display: block;
-            margin-top: -20px;
+            margin-top:-15px ;
+
+          }
+          .wind-image {
+            margin-top: -25px;
+            height: 150px;
+            width: auto;
+            display: block;
+            margin-top:-15px ;
+
+          }
+          
+          .bildpfeil{
+          display:flex;
+          flex-direction: row;
+          gap:20px;
           }
 
           /* ✅ Chart kleiner & responsiv */
           #wellenChart {
             width: 100%;
-            height: auto;
-            max-height: 220px;
+            height: 250px;
+            max-height: 342px;
+            margin-bottom: -100px;
           }
 
             /* Zurück-Button in Info-Box - mobile */
-            .info-box .back-button {
+            .back-button {
               display: block;
               margin: 15px auto 0 auto; /* mittig */
               background-color: #cdea8f; 
@@ -521,6 +572,4 @@ gap:20px;
               text-align: center;
               transition: background 0.3s ease, transform 0.2s ease;
             }
-
-         
-        }
+          }
