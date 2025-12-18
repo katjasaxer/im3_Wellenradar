@@ -267,6 +267,13 @@ gap:20px;
   width: 100%;
 }
 
+#wellenChart {
+  width: 100%;
+  height: 230px;
+  max-height: 342px;
+  margin-bottom: -100px;
+}
+
 .info-inhalt {
   display: flex;
   flex-direction: column; /* untereinander */
