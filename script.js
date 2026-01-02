@@ -40,14 +40,21 @@
             <div class="chartContainer">
               <canvas id="wellenChart"></canvas>
             </div>
+              <button class="back-button" id="closeInfoBox">Zurück</button>
           </div>
         `;
   
+
+        const backbutton = document.getElementById('closeInfoBox');
+
         infoBox.classList.remove('hidden');
         infoBox.classList.add('visible');
 
         inselBox.classList.remove('visible');
         inselBox.classList.add('hidden');
+
+        backbutton.classList.remove('hidden');
+        backbutton.classList.add('visible');
         
   
         // 🔹 Wenn Daten schon geladen sind, Chart zeichnen
@@ -73,14 +80,6 @@
       }
 
       
-    });
-    
-    document.getElementById('closeInfoBox').addEventListener('click', () => {
-    const infoBox = document.querySelector('.info-box');
-    infoBox.classList.remove('visible');
-    infoBox.classList.add('hidden');
-    inselBox.classList.add('visible');
-    inselBox.classList.remove('hidden');
     });
 
 
