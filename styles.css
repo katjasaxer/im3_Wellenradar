@@ -75,7 +75,7 @@
    height: 380px;
    width: 260px;
    margin-top: 40px;
-   margin-right: 180px;
+   margin-right: 225px;
    /*z-index: 2;*/
 
   }
@@ -88,7 +88,7 @@
     height: 290px;
     width: auto;
     margin-top: 108px;
-    margin-right: 937px;
+    margin-right: 975px;
     transform: rotate(2deg);
   }
   .advanced.cta {
@@ -106,7 +106,7 @@
     height: 210px;
     width: auto;
     margin-top: 90px;
-    margin-right: 850px;
+    margin-right: 895px;
     transform: rotate(4deg);
   }
 
@@ -205,6 +205,8 @@
 .info-box.visible {
   opacity: 1;
   pointer-events: all;
+  left: 20%;
+  top: 60%;
 }
 
 .info-box.hidden {
@@ -228,6 +230,12 @@
 
 #infoBoxContent {
   width: 95%;
+  left: 20%;
+  top: 60%;
+}
+#infoBox .info-box visible {
+  left: 20%;
+  top: 60%;
 }
 
 
@@ -301,282 +309,294 @@ gap:20px;
   gap: 15px;
 }
 
+@media (max-width: 1023px) { /*wenn grösser als mobile-Layout, dann wechselt es auf Desktop (tablet-layout wird übersprungen)*/
+         body {
+           background-color: var(--hintergrund);
+           margin: 0;
+           padding: 0;
+           width: 100%;
+           display: flex;
+           flex-direction: column; /* Inhalte untereinander anordnen */
+           align-items: center;    /* horizontal zentrieren */
+           justify-content: flex-start;  /* horizontal zentrieren */
+           overflow:hidden; /*Scrillen auf mobile erlauben*/
+         }
+       
+         .titel {
+           text-align: center;
+           margin-top: 1%;
+         }
+         
+         .h1_wellenradar {
+           font-family: 'mighty-souly'; /* Beispiel-Schrift für Wellenradar */
+           font-size: 30px;                        
+           margin: 0px;
+           color: var(--dunkelblau);
+           margin-top: -30px;
+         }
+         
+         .h2_california {
+           font-family: 'mina-regular';  /* andere Schrift für California */
+           font-size: 20px;                      
+           margin: 0px;
+           color: var(--dunkelblau);
+           margin-top: -50px;
+         }
+       
+         .inhalt {
+         width: 100%;
+         display: flex;
+         flex-direction: column; /* Insel über Map */
+         align-items: center;
+         justify-content: center;
+         margin-top: 0;
+         }
+         
+         .insel {
+         position: relative;
+         display: block;
+         justify-content: center;
+         align-items: center;
+         width: 175px;
+         height: auto;
+         margin-top: -8px;
+         margin-bottom: -5px;
+         }
 
-       @media (max-width: 1023px) { /*wenn grösser als mobile-Layout, dann wechselt es auf Desktop (tablet-layout wird übersprungen)*/
-          body {
-            background-color: var(--hintergrund);
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            display: flex;
-            flex-direction: column; /* Inhalte untereinander anordnen */
-            align-items: center;    /* horizontal zentrieren */
-            justify-content: flex-start;  /* horizontal zentrieren */
-            overflow:hidden; /*Scrillen auf mobile erlauben*/
-          }
-        
-          .titel {
-            text-align: center;
-            margin-top: 1%;
-          }
-          
-          .h1_wellenradar {
-            font-family: 'mighty-souly'; /* Beispiel-Schrift für Wellenradar */
-            font-size: 30px;                        
-            margin: 0px;
-            color: var(--dunkelblau);
-            margin-top: -30px;
-          }
-          
-          .h2_california {
-            font-family: 'mina-regular';  /* andere Schrift für California */
-            font-size: 20px;                      
-            margin: 0px;
-            color: var(--dunkelblau);
-            margin-top: -50px;
-          }
-        
-          .inhalt {
-          width: 100%;
-          display: flex;
-          flex-direction: column; /* Insel über Map */
-          align-items: center;
-          justify-content: center;
-          margin-top: 0;
-          }
-          
-          .insel {
-          position: relative;
-          display: block;
-          justify-content: center;
-          align-items: center;
-          width: 175px;
-          height: auto;
-          margin-top: -8px;
-          margin-bottom: -5px;
-          }
- 
-          .insel.hidden {
-            display: none;
-          }
+         /*.insel.hidden {
+           display: none;
+         } */
 
-          .advanced {
-            position: fixed;
-            display: block;
-            height: 175px;
-            width: auto;
-            margin-top: -100px;
-            margin-right: 45px;
-            transform: rotate(1deg);
-          }
-          .advanced.cta {
-            transition: ease-in 0.5 s; /* Weicher Übergang beim Hover */
-          }
-        
-          .advanced.cta:hover {
-              width: auto;
-              height: 180px;
-          }
-        
-          .beginner {
-            position: fixed;
-            display: block;
-            height: 120px;
-            width: auto;
-            margin-top: -131px;
-            margin-right: -40px;
-          }
-          .beginner.cta {
-            transition: ease-in 0.5 s; /* Weicher Übergang beim Hover */
-          }
-          .beginner.cta:hover {
-              width: auto;
-              height: 125px;
-          }
-          .map {
-            position: relative;
-            width: 90%;
-            max-width: 600px;
-            margin-top: 0;
-            display: flex;
-            justify-content: center;
-            }
-          
-          .map img.background-image {
-            width: 400px;
-            height: auto;
-            display: block;
-            position: relative;
-            z-index: 1; /* Bild bleibt unten */
-            margin-left: 85px;
-          }
-          
-          /* Icons */
-          .welle {
-            position: absolute;
-            width: 8%; /* skalierbar mit dem Bild */
-            z-index: 2; /* Icons über dem Bild */
-            cursor: pointer;    
-            margin-left: 85px;
-          }
-        
-          /* Positionen relativ zum Bild (anpassen nach Bedarf) */
-          .welle_1 { 
-            top: 25%;
-            left: 6%; 
-            width: 40px;
-            height: 40px;
-          }
-          .welle_2 {
-            top: 49%;
-            left: 15%; 
-            width: 40px;
-            height: 40px;
-          }
-          .welle_3 { 
-            top: 60%;
-            left: 22%; 
-            width: 40px;
-            height: 40px;
-          }
-          .welle_4 { 
-            top: 77%;
-            left: 39%; 
-            width: 40px;
-            height: 40px;
-          }
-          .welle_5 { 
-            top: 83%;
-            left: 51%; 
-            width: 40px;
-            height: 40px;
-          }
-          .welle.cta {
-            transition: ease-in 0.5 s; /* Weicher Übergang beim Hover */
-          }
-        
-          .welle.cta:hover {
-              width: 55px;
-              height: 55px;
-          }
+         .advanced {
+           position: absolute;
+           height: 175px;
+           width: auto;
+           margin-top: -100.5px;
+           margin-right: 45px;
+           transform: rotate(1deg);
+         }
+         .advanced.cta {
+           transition: ease-in 0.5 s; /* Weicher Übergang beim Hover */
+         }
+       
+         .advanced.cta:hover {
+             width: auto;
+             height: 180px;
+         }
+       
+         .beginner {
+           position: absolute;
+           height: 120px;
+           width: auto;
+           margin-top: -131px;
+           margin-right: -40px;
+         }
+         .beginner.cta {
+           transition: ease-in 0.5 s; /* Weicher Übergang beim Hover */
+         }
+         .beginner.cta:hover {
+             width: auto;
+             height: 125px;
+         }
+         .map {
+           position: relative;
+           width: 90%;
+           max-width: 600px;
+           margin-top: 0;
+           justify-content: center;
+           }
+         
+         .map img.background-image {
+           width: 400px;
+           height: auto;
+           display: block;
+           position: relative;
+           z-index: 1; /* Bild bleibt unten */
+           margin-left: 85px;
+         }
+         
+         /* Icons */
+         .welle {
+           position: absolute;
+           width: 8%; /* skalierbar mit dem Bild */
+           z-index: 2; /* Icons über dem Bild */
+           cursor: pointer;    
+           margin-left: 85px;
+         }
+       
+         /* Positionen relativ zum Bild (anpassen nach Bedarf) */
+         .welle_1 { 
+           top: 25%;
+           left: 11%; 
+           width: 40px;
+           height: 40px;
+         }
+         .welle_2 {
+           top: 49%;
+           left: 22%; 
+           width: 40px;
+           height: 40px;
+         }
+         .welle_3 { 
+           top: 60%;
+           left: 27%; 
+           width: 40px;
+           height: 40px;
+         }
+         .welle_4 { 
+           top: 77%;
+           left: 39%; 
+           width: 40px;
+           height: 40px;
+         }
+         .welle_5 { 
+           top: 83%;
+           left: 51%; 
+           width: 40px;
+           height: 40px;
+         }
+         .welle.cta {
+           transition: ease-in 0.5 s; /* Weicher Übergang beim Hover */
+         }
+       
+         .welle.cta:hover {
+             width: 55px;
+             height: 55px;
+         }
 
-          /* Info-Box Wellen mobile-friendly */
-          .box-content {
-            display: flex;
-            flex-direction: column; /* untereinander */
-            align-items: center;     /* horizontal zentriert */
-            gap: 10px;
-            height: 100%;
-          }
-          .info-box {
-            position: absolute;
-            top: 50%; /* mittig auf dem Bildschirm */
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 90%;
-            max-width: 360px;
-            /*overflow-y: auto;*/
-            background: #fff;
-            border-radius: 12px;
-            padding: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            font-family: 'mighty-souly';
-            font-size: 18px;
-            color: var(--dunkelblau);
-            z-index: 2;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-          }
+         /* Info-Box Wellen mobile-friendly */
+         .box-content {
+           display: flex;
+           flex-direction: column; /* untereinander */
+           align-items: center;     /* horizontal zentriert */
+           gap: 10px;
+           height: 100%;
+         }
+         #infoBoxContent {
+          width: 95%;
+          left: 20%;
+          top: 60%;
+        }
+        #infoBox .info-box visible {
+          left: 20%;
+          top: 60%;
+        }
 
-          /* Info-Box Boards mobile-friendly */
-          .info-inhaltboards {
-            position: absolute;
-            top: 46%; /* mittig auf dem Bildschirm */
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 100%;
-            font-size:18px;
-            max-width: 360px;
-            margin-top:15px;
-            /*overflow-y: auto; */
-            z-index: 2;
-          }
+         .info-box {
+           position: absolute;
+           top: 50%; /* mittig auf dem Bildschirm */
+           left: 50%;
+           transform: translate(-50%, -50%);
+           width: 90%;
+           max-width: 360px;
+           /*overflow-y: auto;*/
+           background: #fff;
+           border-radius: 12px;
+           padding: 15px;
+           box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+           font-family: 'mighty-souly';
+           font-size: 18px;
+           color: var(--dunkelblau);
+           z-index: 2;
+           display: flex;
+           flex-direction: column;
+           align-items: center; 
+         }
 
-          .box-contentboards {
-            display: flex;
-            flex-direction: column; /* untereinander */
-            align-items: center;     /* horizontal zentriert */
-            gap: 10px;
-            height: 50%;
-          }
-            /* Kleine Animation/Feedback beim Öffnen */
-            .info-box.visible {
-              opacity: 1;
-              transition: all 0.3s ease;
-              left:10%;
-              top:60%;
-              margin-top:-50px;
-              margin-left:-25px;
-            }
+         /* Info-Box Boards mobile-friendly */
+         .info-inhaltboards {
+           display: absolute;
+           top: 46%; /* mittig auf dem Bildschirm */
+           left: 50%;
+           align-items: center;
+           justify-content: center;
+           text-align: center;
+           transform: translate(-50%, -50%);
+           width: 100%;
+           font-size:18px;
+           max-width: 360px;
+           margin-top:60%;
+           margin-left:100%;
 
-            .info-box.hidden {
-              opacity: 0;
-              pointer-events: none;
-              transform: translate(-50%, -50%) scale(0.95);
-            }
+           /*overflow-y: auto; */
+           z-index: 2;
+         }
 
-          /* Info-Box Inhalt */
-          .info-text {
-            text-align: center;
-            font-size: 30px;
-            margin-bottom: 10px;
-            margin-top:-20px;
-          }
+         .box-contentboards {
+           display: flex;
+           flex-direction: column; /* untereinander */
+           align-items: center;     /* horizontal zentriert */
+           gap: 10px;
+           height: 50%;
+         }
+           /* Kleine Animation/Feedback beim Öffnen */
+           .info-box.visible {
+             opacity: 1;
+             transition: all 0.3s ease;
+             left:10%;
+             top:60%;
+             margin-top:-50px;
+             margin-left:-25px;
+           }
 
-          .info-image {
-            width: auto;
-            height: 150px;
-            display: block;
-            margin-top:-15px ;
+           .info-box.hidden {
+             opacity: 0;
+             pointer-events: none;
+             transform: translate(-50%, -50%) scale(0.95);
+           }
 
-          }
-          .wind-image {
-            margin-top: -25px;
-            height: 150px;
-            width: auto;
-            display: block;
-            margin-top:-15px ;
+         /* Info-Box Inhalt */
+         .info-text {
+           text-align: center;
+           font-size: 30px;
+           margin-bottom: 10px;
+           margin-top:-20px;
+           height: 200px;
+         }
 
-          }
-          
-          .bildpfeil{
-          display:flex;
-          flex-direction: row;
-          gap:20px;
-          }
+         .info-image {
+           width: auto;
+           height: 150px;
+           display: block;
+           margin-top:-15px ;
 
-          /* ✅ Chart kleiner & responsiv */
-          #wellenChart {
-            width: 100%;
-            height: 250px;
-            max-height: 342px;
-            margin-bottom: -100px;
-          }
+         }
+         .wind-image {
+           margin-top: -25px;
+           height: 150px;
+           width: auto;
+           display: block;
+           margin-top:-15px ;
 
-            /* Zurück-Button in Info-Box - mobile */
-            .back-button {
-              display: block;
-              margin: 15px auto 0 auto; /* mittig */
-              background-color: #cdea8f; 
-              color: white;
-              border: none;
-              border-radius: 30px; 
-              padding: 6px 20px; 
-              font-family: 'mighty-souly';
-              font-size: 22px;
-              cursor: pointer;
-              text-align: center;
-              transition: background 0.3s ease, transform 0.2s ease;
-            }
-          }
+         }
+         
+         .bildpfeil{
+         display:flex;
+         flex-direction: row;
+         gap:20px;
+         }
+
+         /* ✅ Chart kleiner & responsiv */
+         #wellenChart {
+           width: 100%;
+           height: 250px;
+           max-height: 342px;
+           margin-bottom: -100px;
+         }
+
+           /* Zurück-Button in Info-Box - mobile */
+           .back-button {
+             display: block;
+             margin: 15px auto 0 auto; /* mittig */
+             background-color: #cdea8f; 
+             color: white;
+             border: none;
+             border-radius: 30px; 
+             padding: 6px 20px; 
+             font-family: 'mighty-souly';
+             font-size: 22px;
+             cursor: pointer;
+             text-align: center;
+             transition: background 0.3s ease, transform 0.2s ease;
+           }
+         }
