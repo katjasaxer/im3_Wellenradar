@@ -229,7 +229,8 @@ document.addEventListener("DOMContentLoaded", () => {
   /* --- Infoboxen Boards - Beginner --- */
   beginnerboard.addEventListener('click', (event) => {
     event.stopPropagation();
-      
+    infoBox.style.width = '400px'  
+
       infoBoxContent.innerHTML = `
         <div class="box-contentboards">
         <img src="designs/close.png" alt="Schliessen" class="close-button" id="closeInfoBox" onmouseover="this.src='designs/close_black.png';" onmouseout="this.src='designs/close.png';" />
