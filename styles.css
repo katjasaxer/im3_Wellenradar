@@ -1,268 +1,290 @@
 /*Grundfarben*/
 :root {
-    --hintergrund: rgba(179, 228, 255, 1);
-    --dunkelblau: rgba(0, 34, 99, 1);
-    --mittelblau: rgba(87, 153, 209, 1);
-    --anfängerblau: rgba(78, 152, 209, 0.4);
-  }
+  --hintergrund: rgba(179, 228, 255, 1);
+  --dunkelblau: rgba(0, 34, 99, 1);
+  --mittelblau: rgba(87, 153, 209, 1);
+  --anfängerblau: rgba(78, 152, 209, 0.4);
+}
 
 /*Font/Schrift*/
 @font-face {
-  font-family: 'mighty-souly';
-  src: url('font/mighty-souly/mighty-souly.otf') format('truetype');
-  }
-  @font-face {
-    font-family: 'mina-bold';
-    src: url('font/mina/Mina-Bold.ttf') format('truetype');
-  }
-   @font-face {
-    font-family: 'mina-regular';
-    src: url('font/mina/Mina-Regular.ttf') format('truetype');
-  }
-
-  /*basics------------------------------------*/
-  @media (min-width: 1024px) { /*wenn kleiner als Desktopgrösse, dann wechselt es auf Mobile-Layout */
-  body {
-    background-color: var(--hintergrund);
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    display: flex;
-    flex-direction: column; /* Inhalte untereinander anordnen */
-    align-items: center;    /* horizontal zentrieren */
-    justify-content: center;  /* horizontal zentrieren */
-    overflow: auto; /*Scrillen auf mobile erlauben*/
-  }
-
-  .titel {
-    text-align: center;
-    margin-top: -20px;
-  }
-  
-  .h1_wellenradar {
-    font-family: 'mighty-souly'; /* Beispiel-Schrift für Wellenradar */
-    font-size: 40px;                        
-    color: var(--dunkelblau);
-    margin-top: -20px;
-  }
-  
-  .h2_california {
-    font-family: 'mina-regular';          /* andere Schrift für California */
-    font-size: 20px;                      
-    margin-top: -55px;
-    color: var(--dunkelblau);
-  }
-
-  .h3 {
-        font-family: 'mighty-souly'; /* Beispiel-Schrift für Wellenradar */
-    font-size: 20px;                        
-    color: var(--dunkelblau);
-  }
-
-
-  .inhalt {
-    width: 100%;
-    display: flex;
-    justify-content: right;
-    margin-right: 5%;
-    margin-top: -40px;
-  }
-  
-  .insel {
-  position: relative;
-  display: block;
-  justify-content: left;
-   height: 380px;
-   width: 260px;
-   margin-top: 40px;
-   margin-right: 225px;
-   /*z-index: 2;*/
-
-  }
-  .insel.hidden {
-    display: none;
-  }
-  
-  .advanced {
-    position: absolute;
-    height: 290px;
-    width: auto;
-    margin-top: 108px;
-    margin-right: 975px;
-    transform: rotate(2deg);
-  }
-  .advanced.cta {
-    transition: ease-in 0.5 s; /* Weicher Übergang beim Hover */
-  }
-
-  .advanced.cta:hover {
-      width: auto;
-      height: 298px;
-      margin-top:106px;
-  }
-
-  .beginner {
-    position: absolute;
-    height: 210px;
-    width: auto;
-    margin-top: 90px;
-    margin-right: 895px;
-    transform: rotate(4deg);
-  }
-
-  .beginner.cta {
-    transition: ease-in 0.5 s; /* Weicher Übergang beim Hover */
-  }
-
-  .beginner.cta:hover {
-      width: auto;
-      height: 218px;
-      margin-top:87px;
-  }
-
-  .map {
-    position: relative; /* macht das Bild zum Bezugspunkt für absolute Positionierung */
-    width: 100%;
-    max-width: 600px;
-  }
-  
-  .map img.background-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    position: relative;
-    z-index: 1; /* Bild bleibt unten */
-  }
-  
-  /* Icons */
-  .welle {
-    position: absolute;
-    width: 8%; /* skalierbar mit dem Bild */
-    z-index: 2; /* Icons über dem Bild */
-    cursor: pointer;
-  }
-
-  /* Positionen relativ zum Bild */
-  .welle_1 { 
-    top: 25%;
-    left: 13%; 
-    width: 55px;
-    height: 55px;
-  }
-  .welle_2 {
-    top: 49%;
-    left: 25%; 
-    width: 55px;
-    height: 55px; }
-  .welle_3 { 
-    top: 60%;
-    left: 33%; 
-    width: 55px;
-    height: 55px;
-  }
-  .welle_4 { 
-    top: 78%;
-    left: 51%; 
-    width: 55px;
-    height: 55px;
-  }
-  .welle_5 { 
-    top: 84%;
-    left: 62%; 
-    width: 55px;
-    height: 55px;
-  }
-  
-  .welle.cta {
-    transition: ease-in 0.5 s; /* Weicher Übergang beim Hover */
-  }
-
-  .welle.cta:hover {
-      width: 65px;
-      height: 65px;
-  }
+font-family: 'mighty-souly';
+src: url('font/mighty-souly/mighty-souly.otf') format('truetype');
+}
+@font-face {
+  font-family: 'mina-bold';
+  src: url('font/mina/Mina-Bold.ttf') format('truetype');
+}
+ @font-face {
+  font-family: 'mina-regular';
+  src: url('font/mina/Mina-Regular.ttf') format('truetype');
 }
 
-/* Info-Box */
-.info-box {
-  position: absolute;
-  width: 400px;
-  min-height: 450px;
-  max-height: 500px;
+/*basics------------------------------------*/
+@media (min-width: 1024px) { /*wenn kleiner als Desktopgrösse, dann wechselt es auf Mobile-Layout */
+body {
+  background-color: var(--hintergrund);
+  margin: 0; 
+  padding: 0;
   height: 100%;
-  background: white;
-  border-radius: 10px;
-  padding: 10px 15px;
-  font-family: 'mighty-souly';
-  font-size: 30px;
-  opacity: 0;
-  transform: scale(0.9);
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  z-index: 5;
+  flex-direction: column; /* Inhalte untereinander anordnen */
+  align-items: center;    /* horizontal zentrieren */
+  justify-content: center;  /* horizontal zentrieren */
+  overflow: auto; /*Scrillen auf mobile erlauben*/
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+}
+
+.titel {
+  text-align: center;
+  margin-top: -20px;
+}
+
+.h1_wellenradar {
+  font-family: 'mighty-souly'; /* Beispiel-Schrift für Wellenradar */
+  font-size: 40px;                        
+  color: var(--dunkelblau);
+  margin-top: -20px;
+}
+
+.h2_california {
+  font-family: 'mina-regular';          /* andere Schrift für California */
+  font-size: 20px;                      
+  margin-top: -55px;
   color: var(--dunkelblau);
 }
 
-.info-box.visible {
-  opacity: 1;
-  pointer-events: all;
-  left: 20%;
+.h3 {
+  font-family: 'mighty-souly'; /* Beispiel-Schrift für Wellenradar */
+  font-size: 20px;                        
+  color: var(--dunkelblau);
+}
+
+.inhalt {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 170px;
+  bottom: 0;
+  margin: 0 auto;
+
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  
+}
+
+#insel {
+position: relative;
+height: 380px;
+width: 400px;
+max-width: 600px;
+margin: 10px;
+}
+
+#insel img.insel {
+  width: 300px;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.insel.hidden {
+  display: none;
+}
+
+.map.hidden {
+  display: none;
+}
+
+.beginner {
+  position: absolute;
+  top: 100px;
+  left: 199px;
+  height: 210px;
+  transform: rotate(4deg);
+  transition: ease-in 0.2s; /* Weicher Übergang beim Hover */
+  margin: auto;
+}
+.advanced {
+  position: absolute;
+  top: 116px;
+  left: 110px;
+  height: 180px;
+  transform: rotate(2deg);
+  transition: ease-in 0.2s; /* Weicher Übergang beim Hover */
+  margin: auto;
+}
+
+#beginner:hover {
+    width: auto;
+    height: 220px;
+    top: 90px;
+} 
+
+#advanced:hover {
+    width: auto;
+    height: 188px;
+    top: 108px;
+}
+
+.box-contentboards img.close-button, .box-content img.close-button {
+  width: 50px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+
+.map {
+  position: relative; /* macht das Bild zum Bezugspunkt für absolute Positionierung */
+  width: 50%;
+  max-width: 600px;
+  margin: 10px;
+}
+
+.map img.background-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  position: relative;
+  z-index: 1; /* Bild bleibt unten */
+}
+
+/* Icons */
+.welle {
+  position: absolute;
+  width: 8%; /* skalierbar mit dem Bild */
+  z-index: 2; /* Icons über dem Bild */
+  cursor: pointer;
+}
+
+/* Positionen relativ zum Bild */
+.welle_1 { 
+  top: 25%;
+  left: 13%; 
+  width: 55px;
+  height: 55px;
+}
+.welle_2 {
+  top: 49%;
+  left: 25%; 
+  width: 55px;
+  height: 55px; }
+.welle_3 { 
   top: 60%;
+  left: 33%; 
+  width: 55px;
+  height: 55px;
+}
+.welle_4 { 
+  top: 78%;
+  left: 51%; 
+  width: 55px;
+  height: 55px;
+}
+.welle_5 { 
+  top: 84%;
+  left: 62%; 
+  width: 55px;
+  height: 55px;
+}
+
+.welle.cta {
+  transition: ease-in 0.2s; /* Weicher Übergang beim Hover */
+}
+
+.welle.cta:hover {
+    width: 65px;
+    height: 65px;
+}
+}
+
+
+
+/* Info-Box */
+.info-box {
+width: 600px;
+min-height: 450px;
+max-height: 550px;
+height: 100%;
+background: white;
+border-radius: 10px;
+font-family: 'mighty-souly';
+font-size: 30px;
+opacity: 0;
+z-index: 5;
+transition: ease-in-out 2s;
+color: var(--dunkelblau);
+margin: 10px;
+}
+
+.info-box.visible {
+position: relative;
+opacity: 1;
+pointer-events: all;
+left: 20%;
+top: 60%;
+top: 0;
+left: 0;
 }
 
 .info-box.hidden {
-  opacity: 0;
-  pointer-events: none;
+pointer-events: none;
+display: none;
 } 
 
-.info-box .back-button {
- display: none; /* auf Desktop unsichtbar */
- }
 
 
 /* ----- Inhalt: Titel über Bild, alles zentriert ----- */
 .box-content {
-  display: flex;
-  flex-direction: column; /* untereinander */
-  align-items: center;     /* horizontal zentriert */
-  gap: 10px;
-  height: 100%;
+position: relative;
+display: flex;
+flex-direction: column; /* untereinander */
+align-items: center;     /* horizontal zentriert */
+gap: 10px;
+height: 100%;
 }
 
-#infoBoxContent {
-  width: 95%;
-  left: 20%;
-  top: 60%;
-}
-#infoBox .info-box visible {
-  left: 20%;
-  top: 60%;
-}
 
 
 /* Titel */
 .info-text {
-  display: flex;
-  flex-direction: column; /* untereinander */
-  margin-top: -5%;
-  font-size: 35px;
-  color: var(--dunkelblau);
-  font-weight: 600;
-  align-items: center;
-  justify-content: center;
+display: flex;
+flex-direction: column; /* untereinander */
+font-size: 35px;
+color: var(--dunkelblau);
+font-weight: 600;
+align-items: center;
+justify-content: center;
 }
 
 /* Bild Surfergirl & Pfeil Windrichtung*/
 .info-image {
-  margin-top: -25px;
-  height: 150px;
-  border-radius: 8px;
-  display: block;
+margin-top: -25px;
+height: 150px;
+border-radius: 8px;
+display: block;
 }
 .wind-image {
-  margin-top: -25px;
-  height: 150px;
-  width: auto;
-  display: block;
+margin-top: -25px;
+height: 150px;
+width: auto;
+display: block;
 }
 
 .bildpfeil{
@@ -271,332 +293,334 @@ flex-direction: row;
 gap:20px;
 }
 .chartContainer {
-  height: 100%;
-  width: 100%;
+height: 200px;
+width: 100%;
 }
 
 #wellenChart {
-  width: 100%;
-  height: 230px;
-  max-height: 342px;
-  margin-bottom: -100px;
+width: 100%;
+height: 230px;
+max-height: 342px;
+margin-bottom: -100px;
 }
 
 .info-inhalt {
-  display: flex;
-  flex-direction: column; /* untereinander */
-  font-size: 21px;
-  font-family:mina-regular;
-  color: var(--dunkelblau);
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  gap: 15px;
+display: flex;
+flex-direction: column; /* untereinander */
+font-size: 21px;
+font-family:mina-regular;
+color: var(--dunkelblau);
+align-items: center;
+text-align: center;
+justify-content: center;
+margin-top: 5px;
+margin-bottom: 5px;
+gap: 15px;
 }
 .info-inhaltboards {
-  display: flex;
-  flex-direction: column; /* untereinander */
-  font-size: 21px;
-  font-family:mina-regular;
-  color: var(--dunkelblau);
-  align-items: center;
-  text-align: center;
-  justify-content: center;
-  margin-top: -25px;
-  margin-bottom: 5px;
-  gap: 15px;
+display: flex;
+flex-direction: column; /* untereinander */
+font-size: 21px;
+font-family: mina-regular;
+color: var(--dunkelblau);
+align-items: center;
+text-align: center;
+justify-content: center;
+margin-bottom: 5px;
+margin-left: 5px;
+gap: 15px;
 }
 
 @media (max-width: 1023px) { /*wenn grösser als mobile-Layout, dann wechselt es auf Desktop (tablet-layout wird übersprungen)*/
-         body {
-           background-color: var(--hintergrund);
-           margin: 0;
-           padding: 0;
-           width: 100%;
-           display: flex;
-           flex-direction: column; /* Inhalte untereinander anordnen */
-           align-items: center;    /* horizontal zentrieren */
-           justify-content: flex-start;  /* horizontal zentrieren */
-           overflow:hidden; /*Scrillen auf mobile erlauben*/
-         }
-       
-         .titel {
-           text-align: center;
-           margin-top: 1%;
-         }
-         
-         .h1_wellenradar {
-           font-family: 'mighty-souly'; /* Beispiel-Schrift für Wellenradar */
-           font-size: 30px;                        
-           margin: 0px;
-           color: var(--dunkelblau);
-           margin-top: -30px;
-         }
-         
-         .h2_california {
-           font-family: 'mina-regular';  /* andere Schrift für California */
-           font-size: 20px;                      
-           margin: 0px;
-           color: var(--dunkelblau);
-           margin-top: -50px;
-         }
-       
-         .inhalt {
-         width: 100%;
+       body {
+         background-color: var(--hintergrund);
+         margin: 0;
+         padding: 0;
+         height: 100%;
          display: flex;
-         flex-direction: column; /* Insel über Map */
-         align-items: center;
-         justify-content: center;
-         margin-top: 0;
-         }
-         
-         .insel {
+         flex-direction: column; /* Inhalte untereinander anordnen */
+         align-items: center;    /* horizontal zentrieren */
+         justify-content: flex-start;  /* horizontal zentrieren */
+       }
+     
+       .titel {
+         text-align: center;
+         margin-top: 1%;
+       }
+       
+       .h1_wellenradar {
+         font-family: 'mighty-souly'; /* Beispiel-Schrift für Wellenradar */
+         font-size: 30px;                        
+         margin: 0px;
+         color: var(--dunkelblau);
+         margin-top: -30px;
+       }
+       
+       .h2_california {
+         font-family: 'mina-regular';  /* andere Schrift für California */
+         font-size: 20px;                      
+         margin: 0px;
+         color: var(--dunkelblau);
+         margin-top: -50px;
+       }
+     
+       .inhalt {
+       width: 100%;
+       height: 100%;
+       display: flex;
+       flex-direction: column; /* Insel über Map */
+       align-items: center;
+       justify-content: center;
+       margin-top: 0;
+       }
+       
+       #insel {
+        position: relative;
+        display: flex;
+        height: 200px;
+        width: 300px;
+        max-width: 300px;
+        margin: 10px;
+       }
+
+        #insel.hidden {
+          display: none;
+        }
+
+        .map.hidden {
+          display: none;
+        }
+
+
+       #insel img.insel {
+        height: 200px;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        margin: auto;
+      }
+
+       .info-box.hidden {
+        position: absolute;
+         display: none;
+       } 
+
+        .box-contentboards img.close-button, .box-content img.close-button {
+          width: 50px;
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+
+       .advanced {
+          position: absolute;
+          top: 62px;
+          left: 130px;
+          height: 95px;
+          width: auto;
+          transform: rotate(1deg);
+        }
+     
+       .beginner {
+          position: absolute;
+          top: 52px;
+          left: 175px;
+          height: 110px;
+          width: auto;
+       }
+
+       .map {
          position: relative;
-         display: block;
+         width: 90%;
+         max-width: 350px;
          justify-content: center;
-         align-items: center;
-         width: 175px;
+         }
+       
+       .map img.background-image {
+         width: 350px;
          height: auto;
-         margin-top: -8px;
-         margin-bottom: -5px;
+         display: block;
+         position: relative;
+       }
+       
+       /* Icons */
+       .welle {
+         position: absolute;
+         width: 8%; /* skalierbar mit dem Bild */
+         z-index: 2; /* Icons über dem Bild */
+         cursor: pointer;    
+       }
+     
+       /* Positionen relativ zum Bild (anpassen nach Bedarf) */
+       .welle_1 { 
+         top: 25%;
+         left: 11%; 
+         width: 40px;
+         height: 40px;
+       }
+       .welle_2 {
+         top: 49%;
+         left: 22%; 
+         width: 40px;
+         height: 40px;
+       }
+       .welle_3 { 
+         top: 60%;
+         left: 27%; 
+         width: 40px;
+         height: 40px;
+       }
+       .welle_4 { 
+         top: 77%;
+         left: 39%; 
+         width: 40px;
+         height: 40px;
+       }
+       .welle_5 { 
+         top: 83%;
+         left: 51%; 
+         width: 40px;
+         height: 40px;
+       }
+       .welle.cta {
+         transition: ease-in 0.5s; /* Weicher Übergang beim Hover */
+       }
+     
+       .welle.cta:hover {
+           width: 55px;
+           height: 55px;
+       }
+
+       /* Info-Box Wellen mobile-friendly */
+       .box-content {
+          position: relative;
+          display: flex;
+          flex-direction: column; /* untereinander */
+          align-items: center;     /* horizontal zentriert */
+          gap: 10px;
+          height: 100%;
+        }
+       #infoBoxContent {
+        width: 95%;
+        left: 20%;
+        top: 60%;
+      }
+
+       .info-box {
+         position: absolute;
+         top: 50%; /* mittig auf dem Bildschirm */
+         left: 50%;
+         width: 90%;
+         max-width: 300px;
+         height: 200px;
+         /*overflow-y: auto;*/
+         background: #fff;
+         border-radius: 12px;
+         padding: 15px;
+         padding-bottom: 100px;
+         box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+         font-family: 'mighty-souly';
+         font-size: 13px;
+         color: var(--dunkelblau);
+         z-index: 2;
+         display: flex;
+         flex-direction: column;
+         align-items: center; 
+       }
+
+
+       /* Info-Box Boards mobile-friendly */
+       .info-inhaltboards {
+          display: flex;
+          flex-direction: column; /* untereinander */
+          font-size: 18px;
+          font-family: mina-regular;
+          color: var(--dunkelblau);
+          align-items: center;
+          text-align: center;
+          justify-content: center;
+          margin-bottom: 5px;
+          gap: 15px;
+        }
+
+       .box-contentboards {
+         display: flex;
+         flex-direction: column; /* untereinander */
+         align-items: center;     /* horizontal zentriert */
+         gap: 10px;
+         height: 50%;
+       }
+         /* Kleine Animation/Feedback beim Öffnen */
+         .info-box.visible {
+            position: relative;
+            opacity: 1;
+            pointer-events: all;
+           opacity: 1;
+           transition: all 0.3s ease;
+           top:60%;
          }
 
-         /*.insel.hidden {
-           display: none;
-         } */
+         .info-box.hidden {
+           opacity: 0;
+           pointer-events: none;
+           transform: translate(-50%, -50%) scale(0.95);
+         }
 
-         .advanced {
-           position: absolute;
-           height: 175px;
-           width: auto;
-           margin-top: -100.5px;
-           margin-right: 45px;
-           transform: rotate(1deg);
-         }
-         .advanced.cta {
-           transition: ease-in 0.5 s; /* Weicher Übergang beim Hover */
-         }
+       /* Info-Box Inhalt */
+       .info-text {
+         text-align: center;
+         font-size: 30px;
+         margin-bottom: 10px;
+         height: 200px;
+       }
+
+       .info-image {
+         width: auto;
+         height: 150px;
+         display: block;
+         margin-top:-15px ;
+
+       }
+       .wind-image {
+         margin-top: -25px;
+         height: 150px;
+         width: auto;
+         display: block;
+         margin-top:-15px ;
+
+       }
        
-         .advanced.cta:hover {
-             width: auto;
-             height: 180px;
-         }
-       
-         .beginner {
-           position: absolute;
-           height: 120px;
-           width: auto;
-           margin-top: -131px;
-           margin-right: -40px;
-         }
-         .beginner.cta {
-           transition: ease-in 0.5 s; /* Weicher Übergang beim Hover */
-         }
-         .beginner.cta:hover {
-             width: auto;
-             height: 125px;
-         }
-         .map {
-           position: relative;
-           width: 90%;
-           max-width: 600px;
-           margin-top: 0;
-           justify-content: center;
-           }
-         
-         .map img.background-image {
-           width: 400px;
-           height: auto;
+       .bildpfeil{
+       display:flex;
+       flex-direction: row;
+       gap:20px;
+       }
+
+       /* ✅ Chart kleiner & responsiv */
+       #wellenChart {
+         width: 100%;
+         height: 250px;
+         max-height: 342px;
+         margin-bottom: -100px;
+        padding-right: 10px;
+       }
+
+         /* Zurück-Button in Info-Box - mobile */
+         .back-button {
            display: block;
-           position: relative;
-           z-index: 1; /* Bild bleibt unten */
-           margin-left: 85px;
-         }
-         
-         /* Icons */
-         .welle {
-           position: absolute;
-           width: 8%; /* skalierbar mit dem Bild */
-           z-index: 2; /* Icons über dem Bild */
-           cursor: pointer;    
-           margin-left: 85px;
-         }
-       
-         /* Positionen relativ zum Bild (anpassen nach Bedarf) */
-         .welle_1 { 
-           top: 25%;
-           left: 11%; 
-           width: 40px;
-           height: 40px;
-         }
-         .welle_2 {
-           top: 49%;
-           left: 22%; 
-           width: 40px;
-           height: 40px;
-         }
-         .welle_3 { 
-           top: 60%;
-           left: 27%; 
-           width: 40px;
-           height: 40px;
-         }
-         .welle_4 { 
-           top: 77%;
-           left: 39%; 
-           width: 40px;
-           height: 40px;
-         }
-         .welle_5 { 
-           top: 83%;
-           left: 51%; 
-           width: 40px;
-           height: 40px;
-         }
-         .welle.cta {
-           transition: ease-in 0.5 s; /* Weicher Übergang beim Hover */
-         }
-       
-         .welle.cta:hover {
-             width: 55px;
-             height: 55px;
-         }
-
-         /* Info-Box Wellen mobile-friendly */
-         .box-content {
-           display: flex;
-           flex-direction: column; /* untereinander */
-           align-items: center;     /* horizontal zentriert */
-           gap: 10px;
-           height: 100%;
-         }
-         #infoBoxContent {
-          width: 95%;
-          left: 20%;
-          top: 60%;
-        }
-        #infoBox .info-box visible {
-          left: 20%;
-          top: 60%;
-        }
-
-         .info-box {
-           position: absolute;
-           top: 50%; /* mittig auf dem Bildschirm */
-           left: 50%;
-           transform: translate(-50%, -50%);
-           width: 90%;
-           max-width: 360px;
-           /*overflow-y: auto;*/
-           background: #fff;
-           border-radius: 12px;
-           padding: 15px;
-           box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+           margin: 15px auto 0 auto; /* mittig */
+           background-color: #cdea8f; 
+           color: white;
+           border: none;
+           border-radius: 30px; 
+           padding: 6px 20px; 
            font-family: 'mighty-souly';
-           font-size: 18px;
-           color: var(--dunkelblau);
-           z-index: 2;
-           display: flex;
-           flex-direction: column;
-           align-items: center; 
-         }
-
-         /* Info-Box Boards mobile-friendly */
-         .info-inhaltboards {
-           display: absolute;
-           top: 46%; /* mittig auf dem Bildschirm */
-           left: 50%;
-           align-items: center;
-           justify-content: center;
+           font-size: 22px;
+           cursor: pointer;
            text-align: center;
-           transform: translate(-50%, -50%);
-           width: 100%;
-           font-size:18px;
-           max-width: 360px;
-           margin-top:60%;
-           margin-left:100%;
-
-           /*overflow-y: auto; */
-           z-index: 2;
+           transition: background 0.3s ease, transform 0.2s ease;
          }
-
-         .box-contentboards {
-           display: flex;
-           flex-direction: column; /* untereinander */
-           align-items: center;     /* horizontal zentriert */
-           gap: 10px;
-           height: 50%;
-         }
-           /* Kleine Animation/Feedback beim Öffnen */
-           .info-box.visible {
-             opacity: 1;
-             transition: all 0.3s ease;
-             left:10%;
-             top:60%;
-             margin-top:-50px;
-             margin-left:-25px;
-           }
-
-           .info-box.hidden {
-             opacity: 0;
-             pointer-events: none;
-             transform: translate(-50%, -50%) scale(0.95);
-           }
-
-         /* Info-Box Inhalt */
-         .info-text {
-           text-align: center;
-           font-size: 30px;
-           margin-bottom: 10px;
-           margin-top:-20px;
-           height: 200px;
-         }
-
-         .info-image {
-           width: auto;
-           height: 150px;
-           display: block;
-           margin-top:-15px ;
-
-         }
-         .wind-image {
-           margin-top: -25px;
-           height: 150px;
-           width: auto;
-           display: block;
-           margin-top:-15px ;
-
-         }
-         
-         .bildpfeil{
-         display:flex;
-         flex-direction: row;
-         gap:20px;
-         }
-
-         /* ✅ Chart kleiner & responsiv */
-         #wellenChart {
-           width: 100%;
-           height: 250px;
-           max-height: 342px;
-           margin-bottom: -100px;
-         }
-
-           /* Zurück-Button in Info-Box - mobile */
-           .back-button {
-             display: block;
-             margin: 15px auto 0 auto; /* mittig */
-             background-color: #cdea8f; 
-             color: white;
-             border: none;
-             border-radius: 30px; 
-             padding: 6px 20px; 
-             font-family: 'mighty-souly';
-             font-size: 22px;
-             cursor: pointer;
-             text-align: center;
-             transition: background 0.3s ease, transform 0.2s ease;
-           }
-         }
+       }

@@ -10,51 +10,43 @@
 </head>
 <body>
      <!--<p>Verwendet neuen API-Endpunkt 550 mit Limit-Funktion (Funktion aktuell nicht genutzt)</p> -->
-    
 
 
     <section class="titel">
     <div class="h1_wellenradar">
-      <h1>    Wellenradar </h1>
+      <h1>Wellenradar</h1>
     </div>
     <div class="h2_california">
-        <h2>    California </h2>
+        <h2>Kalifornien</h2>
     </div>
     </section>
 
     <section class="inhalt">
-      
-      <div class="insel" id="insel"> 
+      <div class="insel" id="insel">
         <img src="designs/insel_ohneboards.png" alt="Insel mit Surfergirl" class="insel">
+        <img src="designs/boards/advancedboard_insel_neu.png" alt="Advancedboard" class="advanced" id="advanced">
+        <img src="designs/boards/beginnerboard_insel.png" alt="Beginnerboard" class="beginner" id="beginner">
       </div>
+      <!-- Info-Box -->
+        <div id="infoBox" class="info-box hidden">
+          <div id="infoBoxContent"> </div>
+        </div>
 
-      <div class="advanced"> 
-        <img src="designs/boards/advancedboard_insel_neu.png" alt="Advancedboard" class="advanced cta" id="advanced">
-      </div>
-
-      <div class="beginner"> 
-        <img src="designs/boards/beginnerboard_insel.png" alt="Beginnerboard" class="beginner cta" id="beginner">
-      </div>
-
-        <div class="map">
+        <div class="map" id="map">
             <img src="designs/maps/California_desktop.png" alt="California Map" class="background-image">
-        
             <!-- Icons Wellen direkt in denselben Container! -->
-            <img src="designs/wellen/welle_klein.png" class="welle welle_1 cta" data-info="Albion">
-            <img src="designs/wellen/welle_gross.png" class="welle welle_2 cta" data-info="San Francisco Bar">
-            <img src="designs/wellen/welle_gross.png" class="welle welle_3 cta" data-info="Diablo Canyon">
-            <img src="designs/wellen/welle_klein.png" class="welle welle_4 cta" data-info="Topanga">
-            <img src="designs/wellen/welle_klein.png" class="welle welle_5 cta" data-info="Imperial Beach">
-            
-            <!-- Info-Box -->
-            <div id="infoBox" class="info-box hidden">
-              <div id="infoBoxContent"> </div>
-            </div>
+            <img src="designs/wellen/welle_klein.png" class="welle welle_1 cta" data-info="Albion" alt="test">
+            <img src="designs/wellen/welle_gross.png" class="welle welle_2 cta" data-info="San Francisco Bar" alt="test">
+            <img src="designs/wellen/welle_gross.png" class="welle welle_3 cta" data-info="Diablo Canyon" alt="test">
+            <img src="designs/wellen/welle_klein.png" class="welle welle_4 cta" data-info="Topanga" alt="test">
+            <img src="designs/wellen/welle_klein.png" class="welle welle_5 cta" data-info="Imperial Beach" alt="test">
     </div>
+
+        <div id="inselInfoBox" class="info-box hidden">
+          <div id="InselInfoBoxContent"> </div>
+        </div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="script.js"></script>
-
-  
 </body>
 </html>
